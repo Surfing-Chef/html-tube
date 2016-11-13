@@ -33,8 +33,6 @@ function latest_epicurious ($type){
   $post_array = array();
   global $post_array;
 
-
-
   // POPULATE POST_ARRAY
   if ($type == "recipe"){
     $dom = $rec_dom;
@@ -141,4 +139,127 @@ function latest_epicurious ($type){
 //latest_epicurious('ingredient');
 //latest_epicurious('expert');
 
+function latest_pinterest ($num_posts){
+  // DEFINITIONS
+  // webpage
+  $pins_page = "http://www.pinterest.com/SurfingChef/pins/";
+
+  // Create $html object
+  $html = file_get_html($pins_page);
+
+  // Create $post_array
+  $post_array = array();
+  global $post_array;
+
+  // POPULATE POST_ARRAY
+  // create a loop $num_post times to populate $post_array
+  $count = 0;
+  while($count < $num_posts) {
+  $html->find("div.pinImageActionButtonWrapper div.pinHolder a")[0];
+    // Target image
+    //$picture = $html->find("div.item, 1")[0];
+    // Target heading
+
+    // Target link
+
+    $count+=1;
+  }
+
+  // if ($type == "recipe"){
+  //   $dom = $rec_dom;
+  //   $article = 'article.recipe-of-the-day';
+
+    // Create $html object
+    // $html = file_get_html($dom);
+
+    // Target image
+    // $picture = $html->find("'$article' picture source, 1")[0];
+    // $raw_src = $picture->srcset;
+    // $src_array = explode(",", $raw_src);
+    // $src = 'http:'.$src_array[0];
+    // $post_array["image"] = $src;
+
+    // Target heading
+    // $heading = $html->find("'$article' div.content a.recipe-hed")[0];
+    // $heading_txt = $heading->title;
+    // $post_array["heading"] = $heading_txt;
+
+    // Target link
+    // $link = $html->find("'$article' div.content a")[0];
+    // $href = $web_page.$link->href;
+    // $post_array["link"] = $href;
+
+   //}  elseif ($type == "ingredient"){
+    // $dom = $ing_dom;
+    // $article = 'article.article-large-hero-featured-item';
+
+    // Create $html object
+    // $html = file_get_html($dom);
+
+    // Target image
+    // $picture = $html->find("'$article' picture source, 1")[0];
+    // $raw_src = $picture->srcset;
+    // $src_array = explode(",", $raw_src);
+    // $src = 'http:'.$src_array[0];
+    // $post_array["image"] = $src;
+
+    // Target heading
+    // $heading = $html->find("'$article' header.summary h4")[0];
+    // $heading_txt = $heading->plaintext;
+    // $post_array["heading"] = $heading_txt;
+
+    // Target link
+    // $link = $html->find("'$article' a.view-complete-item")[0];
+    // $href = $web_page.$link->href;
+    // $post_array["link"] = $href;
+
+    // Target summary
+    // $summary_html = file_get_html($href);
+    // $summary_container = $summary_html->find('article.large-hero-article div.large-hero-article div.byline-dek div.dek p')[0];
+    // $summary_txt = $summary_container->plaintext;
+    // $post_array["summary"] = $summary_txt;
+
+  /* } elseif ($type == "expert") { */
+    // $dom = $xprt_dom;
+    // $article = 'article.article-large-hero-featured-item';
+
+    // Create $html object
+    // $html = file_get_html($dom);
+
+    // Target image
+    // $picture = $html->find("'$article' picture source, 1")[0];
+    // $raw_src = $picture->srcset;
+    // $src_array = explode(",", $raw_src);
+    // $src = 'http:'.$src_array[0];
+    // $post_array["image"] = $src;
+
+    // Target heading
+    // $heading = $html->find("'$article' header.summary h4")[0];
+    // $heading_txt = $heading->plaintext;
+    // $post_array["heading"] = $heading_txt;
+
+    // Target link
+    // $link = $html->find("'$article' a.view-complete-item")[0];
+    // $href = $web_page.$link->href;
+    // $post_array["link"] = $href;
+
+    // Target summary
+    // $summary_html = file_get_html($href);
+    // $summary_container = $summary_html->find('article.large-hero-article div.large-hero-article div.byline-dek div.dek p')[0];
+    // $summary_txt = $summary_container->plaintext;
+    // $post_array["summary"] = $summary_txt;
+  //}
+
+  // DISPLAY RESULTS
+  // $image = $post_array['image'];
+  // $heading = $post_array['heading'];
+  // $summary = $post_array['summary'];
+  // $link = $post_array['link'];
+  // echo "<img src='$image' />";
+  // echo "<a target='_blank' href='$link'><h3>$heading</h3></a>";
+  // echo "<p>$summary</p>";
+  // echo "</br>"."</br>";
+}
+
+latest_pinterest (6);
 ?>
