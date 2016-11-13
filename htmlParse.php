@@ -1,4 +1,5 @@
 <?php
+// http://simplehtmldom.sourceforge.net/manual.htm
 
 /* REFERENCES
 
@@ -18,7 +19,7 @@ www.epicurious.com/ingredients
 // INCLUDE simple_html_dom.php
 include("simple_html_dom.php");
 
-function latest_post ($type){
+function latest_epicurious ($type){
   // DEFINITIONS
   // webpage
   $web_page = "http://www.epicurious.com";
@@ -50,7 +51,7 @@ function latest_post ($type){
     $post_array["image"] = $src;
 
     // Target heading
-    $heading = $html->find("'$article' div.content a")[0];
+    $heading = $html->find("'$article' div.content a.recipe-hed")[0];
     $heading_txt = $heading->title;
     $post_array["heading"] = $heading_txt;
 
@@ -136,7 +137,8 @@ function latest_post ($type){
   echo "</br>"."</br>";
 }
 
-latest_post('recipe');
-//latest_post('ingredient');
-//latest_post('expert');
+//latest_epicurious('recipe');
+//latest_epicurious('ingredient');
+//latest_epicurious('expert');
+
 ?>
