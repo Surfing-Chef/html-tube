@@ -142,20 +142,24 @@ function latest_epicurious ($type){
 function latest_pinterest ($num_posts){
   // DEFINITIONS
   // webpage
-  $pins_page = "http://www.pinterest.com/SurfingChef/pins/";
+  $pins_page = "https://www.pinterest.com/SurfingChef";
 
   // Create $html object
   $html = file_get_html($pins_page);
-
+  //$html = file_get_html($pins_page);
+  // Dumps the internal DOM tree back into string
+  // Extract contents from HTML
+  echo $html->plaintext;
   // Create $post_array
   $post_array = array();
   global $post_array;
+
 
   // POPULATE POST_ARRAY
   // create a loop $num_post times to populate $post_array
   $count = 0;
   while($count < $num_posts) {
-  $html->find("div.pinImageActionButtonWrapper div.pinHolder a")[0];
+
     // Target image
     //$picture = $html->find("div.item, 1")[0];
     // Target heading
