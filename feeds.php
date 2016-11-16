@@ -44,20 +44,21 @@ function latest_posts ($site, $num_posts, $json='' ){
       $media = 'data-pin-media';
       $image_container = $html->find("div.photo-block a img");
       $image = $image_container[$count]->$media;
-      $posts_array[$count]['image'] = $image;
+      $posts_array[$site][$count]['image'] = $image;
       // Target heading
       $heading_container = $html->find("div.collectable-tile h3 a[title]");
       $heading = $heading_container[$count]->title;
-      $posts_array[$count]['heading'] = $heading;
+      $posts_array[$site][$count]['heading'] = $heading;
       // Target link
       $link_container = $html->find("div.collectable-tile h3 a[title]");
       $link = $url_short.$link_container[$count]->href;
-      $posts_array[$count]['link'] = $link;
+      $posts_array[$site][$count]['link'] = $link;
       //increment while loop
       $count += 1;
     }
-    echo '<pre>'; print_r($posts_array); echo '</pre>';
   }
+  // returns JSON data
+  echo json_encode($posts_array);
 }
 
 // CALL function
