@@ -142,7 +142,7 @@ function latest_epicurious ($type){
 function latest_pinterest ($num_posts){
   // DEFINITIONS
   // webpage
-  $pins_page = "https://www.pinterest.com/SurfingChef";
+  $pins_page = "https://www.pinterest.com/SurfingChef/pins";
 
   // Create $html object
   $html = file_get_html($pins_page);
