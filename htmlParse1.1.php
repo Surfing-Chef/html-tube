@@ -5,6 +5,7 @@
 include("simple_html_dom.php");
 
 $url = "https://food52.com/recipes";
+
 function latest_feeds ($url, $num_posts){
   // DEFINITIONS
   // webpage
@@ -17,19 +18,18 @@ function latest_feeds ($url, $num_posts){
   $post_array = array();
   global $post_array;
 
-
   // POPULATE POST_ARRAY
   // create a loop $num_post times to populate $post_array
   $count = 0;
-  while($count < $num_posts) {
+  while($count < 7) {
 
     // Target image
-    $picture = $html->find("div.collectable-tile, $count")[0];
-    print_r($picture);
+    // $picture = $html->find("div.collectable-tile, $count")[0];
+    // print_r($picture);
     // Target heading
 
     // Target link
-
+    echo $count."</br>"
     $count+=1;
   }
 }
