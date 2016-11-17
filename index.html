@@ -28,7 +28,9 @@
         }
         if(xhr.readyState == 4 && xhr.status == 200){
           var json = JSON.parse(xhr.responseText);
-          target.innerHTML = (Object.keys(json)) + ' JSON data is loaded.';
+          //target.innerHTML = (Object.keys(json)) + ' JSON data is loaded.';
+          target.innerHTML = "<h2>Raw JSON Data Retreived:</h2>";
+          target.innerHTML += "<pre>"+JSON.stringify(json, null, '\t')+"</pre>";
           // target.innerHTML = json.Food52[0].image;
         }
       }

@@ -13,14 +13,43 @@
 // INCLUDE simple_html_dom.php
 include("simple_html_dom.php");
 
-// MAIN function ::
+// array of sites, address and domains
+$https = array(
+  array(
+    'name' => 'Food52',
+    'toget' => '4',
+    'long' => 'https://food52.com/recipes',
+    'short' => 'https://food52.com',
+  ),
+  array(
+    'name' => 'Epicurious',
+    'toget' => '4',
+    'long' => 'https://www.epicurious.com/recipes-menus',
+    'short' => 'https://www.epicurious.com',
+  ),
+  array(
+    'name' => 'Saveur',
+    'toget' => '4',
+    'long' => 'http://www.saveur.com/food',
+    'short' => 'http://www.saveur.com',
+  ),
+  array(
+    'name' => 'Lucky',
+    'toget' => '4',
+    'long' => 'http://luckypeach.com/features/',
+    'short' => 'http://www.luckypeach.com',
+  )
+);
+
 // $site from list at top, $num_posts to display, $json yes for JSON Output
 
-function latest_posts ($site, $num_posts, $json='' ){
-  if ($site == 'Food52' || 'Food 52') {
+function latest_posts ($https, $json='' ){
+  if ($https[0]['name'] == 'Food52' || 'Food 52') {
     // DEFINITIONS
-    $url_short = "https://food52.com";
-    $url_long = "https://food52.com/recipes";
+    $site = $https[0]['name'];
+    $toget = $https[0]['toget'];
+    $url_short = $https[0]['short'];
+    $url_long = $https[0]['long'];
 
     // Create $html object
     $html = file_get_html($url_long);
@@ -38,7 +67,7 @@ function latest_posts ($site, $num_posts, $json='' ){
     // create a loop $num_post times to populate $post_array
     $count = 0;
 
-    while($count < $num_posts) {
+    while($count < $toget) {
 
       // Target image
       $media = 'data-pin-media';
@@ -62,6 +91,6 @@ function latest_posts ($site, $num_posts, $json='' ){
 }
 
 // CALL function
-latest_posts ('Food52', 4);
+latest_posts ($https);
 
 ?>
