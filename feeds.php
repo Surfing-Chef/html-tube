@@ -13,7 +13,8 @@
 // INCLUDE simple_html_dom.php
 include("simple_html_dom.php");
 
-// array of sites, address and domains
+// ARRAY OF SITES TO RETRIVE DATA FROM
+// includes a name, number of posts to retrieve, a long url and a short to append links to
 $https = array(
   array(
     'name' => 'Food52',
@@ -41,11 +42,17 @@ $https = array(
   )
 );
 
-// $site from list at top, $num_posts to display, $json yes for JSON Output
-
 function latest_posts ($https, $json='' ){
-  if ($https[0]['name'] == 'Food52' || 'Food 52') {
-    // DEFINITIONS
+
+  // get length of $https
+  // all following code uses incremented var to poplate array
+  $num_feeds = count($https);
+  $counter = 0;
+  while(){
+    // place main code here for looping and populating array
+  };
+
+    // RETRIEVE PERTINENT ARRAY INFO FOR PARSING JSON
     $site = $https[0]['name'];
     $toget = $https[0]['toget'];
     $url_short = $https[0]['short'];
@@ -54,15 +61,11 @@ function latest_posts ($https, $json='' ){
     // Create $html object
     $html = file_get_html($url_long);
 
-    // find specific container
-    $array = $html->find("div.collectable-tile h3 a[title]");
-    // find specific value
-    $value = $array[0]->title;
-
     // Create $post_array
     $posts_array = array();
     global $posts_array;
 
+  if ($https[0]['name'] == 'Food52' || 'Food 52') {
     // POPULATE POST_ARRAY
     // create a loop $num_post times to populate $post_array
     $count = 0;
