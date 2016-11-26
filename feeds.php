@@ -18,8 +18,8 @@ include("simple_html_dom.php");
 $https = array(
   array(
     'name' => 'Food52',
-    'toget' => '5',
-    'long' => 'https://food52.com/blog',
+    'toget' => '6',
+    'long' => 'https://food52.com',
     'short' => 'https://food52.com',
   ),
   array(
@@ -53,10 +53,10 @@ function latest_posts ($https, $json='' ){
   //};
 
   // RETRIEVE PERTINENT ARRAY INFO FOR PARSING JSON
-  $site = $https[0]['name'];
-  $toget = $https[0]['toget'];
-  $url_short = $https[0]['short'];
-  $url_long = $https[0]['long'];
+  $site = $https[$counter]['name'];
+  $toget = $https[$counter]['toget'];
+  $url_short = $https[$counter]['short'];
+  $url_long = $https[$counter]['long'];
 
   // Create $html object
   $html = file_get_html($url_long);
@@ -67,45 +67,94 @@ function latest_posts ($https, $json='' ){
 
   //FOOD52
 
-  if ($https[0]['name'] == 'Food52' || 'Food 52') {
+  if ($https[$counter]['name'] == 'Food52' || 'Food 52') {
     // POPULATE POST_ARRAY
-    // create a loop $num_post times to populate $post_array
+    //echo $https[$counter]['name'].'<br>';
+    //create a loop $num_post times to populate $post_array
     $count = 0;
 
     while($count < $toget) {
-      // $num_headings = 0;
-      // find the headings
-      $headings = $html->find('a[class=topic-index-topic-label]');
-      // populate $posts_array with the selected headings
-      foreach($headings as $heading){
-        //echo $heading->plaintext.'</br>';
-        $posts_array[$site]['heading'][] = $heading->plaintext;
-      }
-
-      // // find the descriptions
-      // $descriptions = $html->find('div[class=topic-index-tile] > h3 > a');
-      // foreach($descriptions as $description){
-      //     //echo $description->plaintext.'</br>';
-      //     $container[$site]['description'][]= $description->plaintext;
-      // }
-      //
-      // // find the images
-      // $media = "data-pin-media";
-      // $images = $html->find('div[class=topic-index-tile] > a img');
-      // foreach($images as $image){
-      //     $container[$site]['image'][] = $image->$media;
-      // }
-      //
-      // // find the links
-      // $urls = $html->find('div[class=topic-index-tile] > h3 > a');
-      // foreach($urls as $url){
-      //   $container[$site]['link'][] = $url_short.$url->href;
-      // }
-    $count ++;
+      $containers = $html->find("div.home-tile a.image > img");
+      // headings
+      $heading =  $containers[$count]->alt;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $img_url_attr = 'data-pin-media';
+      $image =  $containers[$count]->$img_url_attr;
+      $posts_array[$site][$count]['image'] = $image;
+      // links
+      $url =  $containers[$count]->src;
+      $posts_array[$site][$count]['url'] = $url;
+      $count ++;
     }
+    $counter++;
   }
+  if ($https[$counter]['name'] == 'Epicurious') {
+    // POPULATE POST_ARRAY
+    //echo $https[$counter]['name'].'<br>';
+    // create a loop $num_post times to populate $post_array
+    // $count = 0;
+    // while($count < $toget) {
+    //   $containers = $html->find("div.home-tile a.image > img");
+    //   // headings
+    //   $heading =  $containers[$count]->alt;
+    //   $posts_array[$site][$count]['heading'] = $heading;
+    //   // images
+    //   $img_url_attr = 'data-pin-media';
+    //   $image =  $containers[$count]->$img_url_attr;
+    //   $posts_array[$site][$count]['image'] = $image;
+    //   // links
+    //   $url =  $containers[$count]->src;
+    //   $posts_array[$site][$count]['url'] = $url;
+    //   $count ++;
+    // }
+    $counter++;
+  }
+  if ($https[$counter]['name'] == 'Saveur') {
+    // POPULATE POST_ARRAY
+    //echo $https[$counter]['name'].'<br>';
+    // create a loop $num_post times to populate $post_array
+    // $count = 0;
+    // while($count < $toget) {
+    //   $containers = $html->find("div.home-tile a.image > img");
+    //   // headings
+    //   $heading =  $containers[$count]->alt;
+    //   $posts_array[$site][$count]['heading'] = $heading;
+    //   // images
+    //   $img_url_attr = 'data-pin-media';
+    //   $image =  $containers[$count]->$img_url_attr;
+    //   $posts_array[$site][$count]['image'] = $image;
+    //   // links
+    //   $url =  $containers[$count]->src;
+    //   $posts_array[$site][$count]['url'] = $url;
+    //   $count ++;
+    // }
+    $counter++;
+  }
+  if ($https[$counter]['name'] == 'Lucky') {
+    // POPULATE POST_ARRAY
+    //echo $https[$counter]['name'].'<br>';
+    // create a loop $num_post times to populate $post_array
+    // $count = 0;
+    // while($count < $toget) {
+    //   $containers = $html->find("div.home-tile a.image > img");
+    //   // headings
+    //   $heading =  $containers[$count]->alt;
+    //   $posts_array[$site][$count]['heading'] = $heading;
+    //   // images
+    //   $img_url_attr = 'data-pin-media';
+    //   $image =  $containers[$count]->$img_url_attr;
+    //   $posts_array[$site][$count]['image'] = $image;
+    //   // links
+    //   $url =  $containers[$count]->src;
+    //   $posts_array[$site][$count]['url'] = $url;
+    //   $count ++;
+    // }
+    $counter++;
+  }
+
   // // returns JSON data
-  //echo json_encode($latest_posts);
+  echo json_encode($posts_array);
 } // end function latest_posts()
 
 // CALL function
