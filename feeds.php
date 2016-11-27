@@ -28,15 +28,17 @@ $https = array(
     'long' => 'https://www.epicurious.com/recipes-menus',
     'short' => 'https://www.epicurious.com',
   ),
-  array(
-    'name' => 'Saveur',
-    'toget' => '4',
-    'long' => 'http://www.saveur.com/food',
-    'short' => 'http://www.saveur.com',
-  ),
+  // Saver throws an error which will be a bug I work out
+  // the site disallows scraping, access forbidden, need to bypass
+  // array(
+  //   'name' => 'Saveur',
+  //   'toget' => '4',
+  //   'long' => 'http://www.saveur.com/taxonomy/term/1001019/rss.xml',
+  //   'short' => 'http://www.saveur.com',
+  // ),
   array(
     'name' => 'Lucky',
-    'toget' => '4',
+    'toget' => '6',
     'long' => 'http://luckypeach.com/features/',
     'short' => 'http://www.luckypeach.com',
   )
@@ -119,28 +121,42 @@ function latest_posts ($https, $json='' ){
     }
     $counter++;
   }
-  if ($https[$counter]['name'] == 'Saveur') {
-    // POPULATE POST_ARRAY
-    //echo $https[$counter]['name'].'<br>';
-    // create a loop $num_post times to populate $post_array
-    // $count = 0;
-    // while($count < $toget) {
-    //   $containers = $html->find("div.home-tile a.image > img");
-    //   // headings
-    //   $heading =  $containers[$count]->alt;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $img_url_attr = 'data-pin-media';
-    //   $image =  $containers[$count]->$img_url_attr;
-    //   $posts_array[$site][$count]['image'] = $image;
-    //   // links
-    //   $url =  $containers[$count]->src;
-    //   $posts_array[$site][$count]['url'] = $url;
-    //   $count ++;
-    // }
-    $counter++;
-  }
   if ($https[$counter]['name'] == 'Lucky') {
+    // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
+    $site = $https[$counter]['name'];
+    $toget = $https[$counter]['toget'];
+    $url_short = $https[$counter]['short'];
+    $url_long = $https[$counter]['long'];
+
+    // Create $html object
+    $html = file_get_html($url_long);
+
+    // POPULATE POST_ARRAY
+    // create a loop $num_post times to populate $post_array
+    $count = 0;
+
+    while($count < $toget) {
+      // headings
+      $headings = $html->find("div.archive-list--item div.");
+      echo $headings[$count]->plaintext.'<br';
+      // $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      // $img_url_attr = 'data-srcset';
+      // $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
+      // // array of two comma delimited attibutes returned from srcset
+      // $images = explode (', ', $pictures[$count]->$img_url_attr);
+      // // extract first attibute
+      // $image =  'https:'.$images[0];
+      // $posts_array[$site][$count]['image'] = $image;
+      // links
+      // $links = $html->find("article.article-featured-item > a");
+      // $link = $url_short.$links[$count]->href;
+      // $posts_array[$site][$count]['url'] = $link;
+      $count ++;
+    }
+    $counter++;
+  }
+  //if ($https[$counter]['name'] == 'Lucky') {
     // POPULATE POST_ARRAY
     //echo $https[$counter]['name'].'<br>';
     // create a loop $num_post times to populate $post_array
@@ -159,8 +175,8 @@ function latest_posts ($https, $json='' ){
     //   $posts_array[$site][$count]['url'] = $url;
     //   $count ++;
     // }
-    $counter++;
-  }
+  //  $counter++;
+  //}
 
   // // returns JSON data
   echo json_encode($posts_array);
