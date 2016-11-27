@@ -24,7 +24,7 @@ $https = array(
   ),
   array(
     'name' => 'Epicurious',
-    'toget' => '4',
+    'toget' => '6',
     'long' => 'https://www.epicurious.com/recipes-menus',
     'short' => 'https://www.epicurious.com',
   ),
@@ -48,28 +48,23 @@ function latest_posts ($https, $json='' ){
   // all following code uses incremented var to poplate array
   $num_feeds = count($https);
   $counter = 0;
-  //while(){
-    // place main code here for looping and populating array
-  //};
-
-  // RETRIEVE PERTINENT ARRAY INFO FOR PARSING JSON
-  $site = $https[$counter]['name'];
-  $toget = $https[$counter]['toget'];
-  $url_short = $https[$counter]['short'];
-  $url_long = $https[$counter]['long'];
-
-  // Create $html object
-  $html = file_get_html($url_long);
 
   // Create $post_array
   $posts_array = array();
   global $posts_array;
 
   //FOOD52
-
   if ($https[$counter]['name'] == 'Food52' || 'Food 52') {
+    // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
+    $site = $https[$counter]['name'];
+    $toget = $https[$counter]['toget'];
+    $url_short = $https[$counter]['short'];
+    $url_long = $https[$counter]['long'];
+
+    // Create $html object
+    $html = file_get_html($url_long);
+
     // POPULATE POST_ARRAY
-    //echo $https[$counter]['name'].'<br>';
     //create a loop $num_post times to populate $post_array
     $count = 0;
 
@@ -90,24 +85,38 @@ function latest_posts ($https, $json='' ){
     $counter++;
   }
   if ($https[$counter]['name'] == 'Epicurious') {
+    // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
+    $site = $https[$counter]['name'];
+    $toget = $https[$counter]['toget'];
+    $url_short = $https[$counter]['short'];
+    $url_long = $https[$counter]['long'];
+
+    // Create $html object
+    $html = file_get_html($url_long);
+
     // POPULATE POST_ARRAY
-    //echo $https[$counter]['name'].'<br>';
     // create a loop $num_post times to populate $post_array
-    // $count = 0;
-    // while($count < $toget) {
-    //   $containers = $html->find("div.home-tile a.image > img");
-    //   // headings
-    //   $heading =  $containers[$count]->alt;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $img_url_attr = 'data-pin-media';
-    //   $image =  $containers[$count]->$img_url_attr;
-    //   $posts_array[$site][$count]['image'] = $image;
-    //   // links
-    //   $url =  $containers[$count]->src;
-    //   $posts_array[$site][$count]['url'] = $url;
-    //   $count ++;
-    // }
+    $count = 0;
+
+    while($count < $toget) {
+      // headings
+      $headings = $html->find("article.article-featured-item > header > h4");
+      $heading = $headings[$count]->plaintext;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $img_url_attr = 'data-srcset';
+      $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
+      // array of two comma delimited attibutes returned from srcset
+      $images = explode (', ', $pictures[$count]->$img_url_attr);
+      // extract first attibute
+      $image =  'https:'.$images[0];
+      $posts_array[$site][$count]['image'] = $image;
+      // links
+      $links = $html->find("article.article-featured-item > a");
+      $link = $url_short.$links[$count]->href;
+      $posts_array[$site][$count]['url'] = $link;
+      $count ++;
+    }
     $counter++;
   }
   if ($https[$counter]['name'] == 'Saveur') {
