@@ -117,7 +117,7 @@ function latest_posts ($https, $json='' ){
       $links = $html->find("article.article-featured-item > a");
       $link = $url_short.$links[$count]->href;
       $posts_array[$site][$count]['url'] = $link;
-      $count ++;
+      $count++;
     }
     $counter++;
   }
@@ -137,22 +137,18 @@ function latest_posts ($https, $json='' ){
 
     while($count < $toget) {
       // headings
-      $headings = $html->find("div.archive-list--item div.");
-      echo $headings[$count]->plaintext.'<br';
-      // $posts_array[$site][$count]['heading'] = $heading;
+      $headings = $html->find("div.archive-list--content div.entry-title h2 a");
+      $heading = $headings[$count]->plaintext;
+      $posts_array[$site][$count]['heading'] = $heading;
       // images
-      // $img_url_attr = 'data-srcset';
-      // $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
-      // // array of two comma delimited attibutes returned from srcset
-      // $images = explode (', ', $pictures[$count]->$img_url_attr);
-      // // extract first attibute
-      // $image =  'https:'.$images[0];
-      // $posts_array[$site][$count]['image'] = $image;
+      $pictures = $html->find("div.archive-list--img a img");
+      $picture = $pictures[$count]->src;
+      $posts_array[$site][$count]['image'] = $picture;
       // links
-      // $links = $html->find("article.article-featured-item > a");
-      // $link = $url_short.$links[$count]->href;
-      // $posts_array[$site][$count]['url'] = $link;
-      $count ++;
+      $links = $html->find("div.archive-list--content div.entry-title h2 a");
+      $link = $links[$count]->href;
+      $posts_array[$site][$count]['url'] = $link;
+      $count++;
     }
     $counter++;
   }
@@ -173,7 +169,7 @@ function latest_posts ($https, $json='' ){
     //   // links
     //   $url =  $containers[$count]->src;
     //   $posts_array[$site][$count]['url'] = $url;
-    //   $count ++;
+    //   $count++;
     // }
   //  $counter++;
   //}
