@@ -152,27 +152,6 @@ function latest_posts ($https, $json='' ){
     }
     $counter++;
   }
-  //if ($https[$counter]['name'] == 'Lucky') {
-    // POPULATE POST_ARRAY
-    //echo $https[$counter]['name'].'<br>';
-    // create a loop $num_post times to populate $post_array
-    // $count = 0;
-    // while($count < $toget) {
-    //   $containers = $html->find("div.home-tile a.image > img");
-    //   // headings
-    //   $heading =  $containers[$count]->alt;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $img_url_attr = 'data-pin-media';
-    //   $image =  $containers[$count]->$img_url_attr;
-    //   $posts_array[$site][$count]['image'] = $image;
-    //   // links
-    //   $url =  $containers[$count]->src;
-    //   $posts_array[$site][$count]['url'] = $url;
-    //   $count++;
-    // }
-  //  $counter++;
-  //}
 
   // // returns JSON data
   echo json_encode($posts_array);
