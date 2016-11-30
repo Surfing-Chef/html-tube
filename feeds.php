@@ -28,23 +28,24 @@ $https = array(
     'long' => 'https://www.epicurious.com/recipes-menus',
     'short' => 'https://www.epicurious.com',
   ),
-  // Saver throws an error which will be a bug I work out
-  // the site disallows scraping, access forbidden, need to bypass
-  // array(
-  //   'name' => 'Saveur',
-  //   'toget' => '4',
-  //   'long' => 'http://www.saveur.com/taxonomy/term/1001019/rss.xml',
-  //   'short' => 'http://www.saveur.com',
-  // ),
   array(
     'name' => 'Lucky',
     'toget' => '6',
     'long' => 'http://luckypeach.com/features/',
     'short' => 'http://www.luckypeach.com',
+  ),
+  array(
+    'name' => 'Saveur',
+    'toget' => '6',
+    'long' => 'http://www.saveur.com',
+    'short' => 'http://www.saveur.com',
   )
 );
 
+
 function latest_posts ($https, $json='' ){
+  include_once "script/curl.php";
+  //ScCurl::download_page($url = "http://www.Surfing-Chef.com", $out_file = "pages/body.html");
 
   // get length of $https
   // all following code uses incremented var to poplate array
@@ -55,7 +56,7 @@ function latest_posts ($https, $json='' ){
   $posts_array = array();
   global $posts_array;
 
-  //FOOD52
+  //  FOOD52
   if ($https[$counter]['name'] == 'Food52' || 'Food 52') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
     $site = $https[$counter]['name'];
@@ -86,6 +87,7 @@ function latest_posts ($https, $json='' ){
     }
     $counter++;
   }
+  //  EPICURIOUS
   if ($https[$counter]['name'] == 'Epicurious') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
     $site = $https[$counter]['name'];
@@ -121,6 +123,7 @@ function latest_posts ($https, $json='' ){
     }
     $counter++;
   }
+  //  LUCKY PEACH
   if ($https[$counter]['name'] == 'Lucky') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
     $site = $https[$counter]['name'];
@@ -152,6 +155,47 @@ function latest_posts ($https, $json='' ){
     }
     $counter++;
   }
+  //  SAVEUR
+  if ($https[$counter]['name'] == 'Saveur') {
+    // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
+    $site = $https[$counter]['name'];
+    $toget = $https[$counter]['toget'];
+    $url_short = $https[$counter]['short'];
+    $url_long = $https[$counter]['long'];
+
+    // create storage container path
+    $storage_container = "pages/$site.html";
+    // call to ScClass for download_page method
+    ScCurl::download_page($url_short, $storage_container);
+
+    // Create $html object
+    $html = file_get_html($storage_container);
+
+    // POPULATE POST_ARRAY
+    // create a loop $num_post times to populate $post_array
+    $count = 0;
+
+    while($count < $toget) {
+      // headings
+      $headings = $html->find("li.views-row div div div div.pane-node-title h3 a");
+      $heading = $headings[$count]->plaintext;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $img_url_attr = 'data-xlsrc';
+      $pictures = $html->find("li.views-row div div div div.pane-node-field-image div a img");
+      $images = explode ('?', $pictures[$count]->$img_url_attr);
+      // extract first extracted string in created array object
+      $image = $images[0];
+      $posts_array[$site][$count]['image'] = $image;
+      // links
+      $links = $html->find("li.views-row div div div div.pane-node-title h3 a");
+      $link = "$url_short".$links[$count]->href;
+      $posts_array[$site][$count]['url'] = $link;
+      $count++;
+    }
+    $counter++;
+  }
+
 
   // // returns JSON data
   echo json_encode($posts_array);
@@ -160,4 +204,6 @@ function latest_posts ($https, $json='' ){
 // CALL function
 latest_posts ($https);
 
+// DEBUG
+//var_dump($posts_array);
 ?>
