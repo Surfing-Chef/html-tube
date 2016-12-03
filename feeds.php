@@ -5,8 +5,6 @@
 // Thanks to John Schlick for PHP Simple HTML DOM Parser
 // http://simplehtmldom.sourceforge.net/manual.htm
 
-// SITES available for use in this function:
-// https://food52.com/recipes :: 'Food 52'
 
 // BEGIN CODE ::
 
@@ -22,12 +20,12 @@ $https = array(
     'long' => 'https://food52.com',
     'short' => 'https://food52.com',
   ),
-  array(
-    'name' => 'Epicurious',
-    'toget' => '6',
-    'long' => 'https://www.epicurious.com/recipes-menus',
-    'short' => 'https://www.epicurious.com',
-  ),
+  // array(
+  //   'name' => 'Epicurious',
+  //   'toget' => '4',
+  //   'long' => 'https://www.epicurious.com/recipes-menus',
+  //   'short' => 'https://www.epicurious.com',
+  // ),
   array(
     'name' => 'Lucky',
     'toget' => '6',
@@ -71,58 +69,58 @@ function latest_posts ($https, $json='' ){
     //create a loop $num_post times to populate $post_array
     $count = 0;
 
-    // while($count < $toget) {
-    //   $containers = $html->find("div.home-tile a.image > img");
-    //   // headings
-    //   $heading =  $containers[$count]->alt;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $img_url_attr = 'data-pin-media';
-    //   $image =  $containers[$count]->$img_url_attr;
-    //   $posts_array[$site][$count]['image'] = $image;
-    //   // links
-    //   $url =  $containers[$count]->src;
-    //   $posts_array[$site][$count]['url'] = $url;
-    //   $count ++;
-    // }
+    while($count < $toget) {
+      $containers = $html->find("div.home-tile a.image > img");
+      // headings
+      $heading =  $containers[$count]->alt;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $img_url_attr = 'data-pin-media';
+      $image =  $containers[$count]->$img_url_attr;
+      $posts_array[$site][$count]['image'] = $image;
+      // links
+      $url =  $containers[$count]->src;
+      $posts_array[$site][$count]['url'] = $url;
+      $count ++;
+    }
     $counter++;
   }
   //  EPICURIOUS
-  if ($https[$counter]['name'] == 'Epicurious') {
-    // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
-    $site = $https[$counter]['name'];
-    $toget = $https[$counter]['toget'];
-    $url_short = $https[$counter]['short'];
-    $url_long = $https[$counter]['long'];
-
-    // Create $html object
-    $html = file_get_html($url_long);
-
-    // POPULATE POST_ARRAY
-    // create a loop $num_post times to populate $post_array
-    $count = 0;
-
-    // while($count < $toget) {
-    //   // headings
-    //   $headings = $html->find("article.article-featured-item > header > h4");
-    //   $heading = $headings[$count]->plaintext;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $img_url_attr = 'data-srcset';
-    //   $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
-    //   // array of two comma delimited attibutes returned from srcset
-    //   $images = explode (', ', $pictures[$count]->$img_url_attr);
-    //   // extract first attibute
-    //   $image =  'https:'.$images[0];
-    //   $posts_array[$site][$count]['image'] = $image;
-    //   // links
-    //   $links = $html->find("article.article-featured-item > a");
-    //   $link = $url_short.$links[$count]->href;
-    //   $posts_array[$site][$count]['url'] = $link;
-    //   $count++;
-    // }
-    $counter++;
-  }
+  // if ($https[$counter]['name'] == 'Epicurious') {
+  //   // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
+  //   $site = $https[$counter]['name'];
+  //   $toget = $https[$counter]['toget'];
+  //   $url_short = $https[$counter]['short'];
+  //   $url_long = $https[$counter]['long'];
+  //
+  //   // Create $html object
+  //   $html = file_get_html($url_long);
+  //
+  //   // POPULATE POST_ARRAY
+  //   // create a loop $num_post times to populate $post_array
+  //   $count = 0;
+  //
+  //   while($count < $toget) {
+  //     // headings
+  //     $headings = $html->find("article[itemtype*=CollectionPage] > header > h4");
+  //     $heading = $headings[$count]->plaintext;
+  //     $posts_array[$site][$count]['heading'] = $heading;
+  //     // images
+  //     $img_url_attr = 'data-srcset';
+  //     $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
+  //     // array of two comma delimited attibutes returned from srcset
+  //     $images = explode (', ', $pictures[$count]->$img_url_attr);
+  //     // extract first attibute
+  //     $image =  'https:'.$images[0];
+  //     $posts_array[$site][$count]['image'] = $image;
+  //     // links
+  //     $links = $html->find("article.article-featured-item > a");
+  //     $link = $url_short.$links[$count]->href;
+  //     $posts_array[$site][$count]['url'] = $link;
+  //     $count++;
+  //   }
+  //   $counter++;
+  // }
   //  LUCKY PEACH
   if ($https[$counter]['name'] == 'Lucky') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
@@ -138,21 +136,21 @@ function latest_posts ($https, $json='' ){
     // create a loop $num_post times to populate $post_array
     $count = 0;
 
-    // while($count < $toget) {
-    //   // headings
-    //   $headings = $html->find("div.archive-list--content div.entry-title h2 a");
-    //   $heading = $headings[$count]->plaintext;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $pictures = $html->find("div.archive-list--img a img");
-    //   $picture = $pictures[$count]->src;
-    //   $posts_array[$site][$count]['image'] = $picture;
-    //   // links
-    //   $links = $html->find("div.archive-list--content div.entry-title h2 a");
-    //   $link = $links[$count]->href;
-    //   $posts_array[$site][$count]['url'] = $link;
-    //   $count++;
-    // }
+    while($count < $toget) {
+      // headings
+      $headings = $html->find("div.archive-list--content div.entry-title h2 a");
+      $heading = $headings[$count]->plaintext;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $pictures = $html->find("div.archive-list--img a img");
+      $picture = $pictures[$count]->src;
+      $posts_array[$site][$count]['image'] = $picture;
+      // links
+      $links = $html->find("div.archive-list--content div.entry-title h2 a");
+      $link = $links[$count]->href;
+      $posts_array[$site][$count]['url'] = $link;
+      $count++;
+    }
     $counter++;
   }
   //  SAVEUR
@@ -174,25 +172,25 @@ function latest_posts ($https, $json='' ){
     // POPULATE POST_ARRAY
     // create a loop $num_post times to populate $post_array
     $count = 0;
-    //
-    // while($count < $toget) {
-    //   // headings
-    //   $headings = $html->find("li.views-row div div div div.pane-node-title h3 a");
-    //   $heading = $headings[$count]->plaintext;
-    //   $posts_array[$site][$count]['heading'] = $heading;
-    //   // images
-    //   $img_url_attr = 'data-xlsrc';
-    //   $pictures = $html->find("li.views-row div div div div.pane-node-field-image div a img");
-    //   $images = explode ('?', $pictures[$count]->$img_url_attr);
-    //   // extract first extracted string in created array object
-    //   $image = $images[0];
-    //   $posts_array[$site][$count]['image'] = $image;
-    //   // links
-    //   $links = $html->find("li.views-row div div div div.pane-node-title h3 a");
-    //   $link = "$url_short".$links[$count]->href;
-    //   $posts_array[$site][$count]['url'] = $link;
-    //   $count++;
-    // }
+
+    while($count < $toget) {
+      // headings
+      $headings = $html->find("li.views-row div div div div.pane-node-title h3 a");
+      $heading = $headings[$count]->plaintext;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $img_url_attr = 'data-xlsrc';
+      $pictures = $html->find("li.views-row div div div div.pane-node-field-image div a img");
+      $images = explode ('?', $pictures[$count]->$img_url_attr);
+      // extract first extracted string in created array object
+      $image = $images[0];
+      $posts_array[$site][$count]['image'] = $image;
+      // links
+      $links = $html->find("li.views-row div div div div.pane-node-title h3 a");
+      $link = "$url_short".$links[$count]->href;
+      $posts_array[$site][$count]['url'] = $link;
+      $count++;
+    }
     $counter++;
   }
   // returns JSON data
