@@ -8,15 +8,18 @@
 
 // BEGIN CODE ::
 
-// INCLUDE simple_html_dom.php
-include("simple_html_dom.php");
+// INCLUDE
+// simple_html_dom.php
+include("scripts/simple_html_dom.php");
+// curl.php
+include("scripts/curl.php");
 
 // ARRAY OF SITES TO RETRIVE DATA FROM
 // includes a name, number of posts to retrieve, a long url and a short to append links to
 $https = array(
   array(
     'name' => 'Food52',
-    'toget' => '6',
+    'toget' => '4',
     'long' => 'https://food52.com',
     'short' => 'https://food52.com',
   ),
@@ -28,13 +31,13 @@ $https = array(
   // ),
   array(
     'name' => 'Lucky',
-    'toget' => '6',
+    'toget' => '4',
     'long' => 'http://luckypeach.com/features/',
     'short' => 'http://www.luckypeach.com',
   ),
   array(
     'name' => 'Saveur',
-    'toget' => '6',
+    'toget' => '4',
     'long' => 'http://www.saveur.com',
     'short' => 'http://www.saveur.com',
   )
@@ -42,8 +45,6 @@ $https = array(
 
 
 function latest_posts ($https, $json='' ){
-  include_once "script/curl.php";
-  //ScCurl::download_page($url = "http://www.Surfing-Chef.com", $out_file = "pages/body.html");
 
   // get length of $https
   // all following code uses incremented var to poplate array
@@ -62,8 +63,25 @@ function latest_posts ($https, $json='' ){
     $url_short = $https[$counter]['short'];
     $url_long = $https[$counter]['long'];
 
+    // create storage container path
+    $storage_container = "pages/$site.html";
+
+    // Check if created page exists,
+    // create one if not, update it if
+    // page is older than a day.
+    if (file_exists($storage_container)) {
+      $age = (time()-filemtime($storage_container));
+      if ($age > 60*60*12) {
+        // call to ScClass for download_page method
+        ScCurl::download_page($url_short, $storage_container);
+      }
+    } else if (!file_exists($storage_container)) {
+      // call to ScClass for download_page method
+      ScCurl::download_page($url_short, $storage_container);
+    }
+
     // Create $html object
-    $html = file_get_html($url_long);
+    $html = file_get_html($storage_container);
 
     // POPULATE POST_ARRAY
     //create a loop $num_post times to populate $post_array
@@ -129,8 +147,25 @@ function latest_posts ($https, $json='' ){
     $url_short = $https[$counter]['short'];
     $url_long = $https[$counter]['long'];
 
+    // create storage container path
+    $storage_container = "pages/$site.html";
+
+    // Check if created page exists,
+    // create one if not, update it if
+    // page is older than a day.
+    if (file_exists($storage_container)) {
+      $age = (time()-filemtime($storage_container));
+      if ($age > 60*60*12) {
+        // call to ScClass for download_page method
+        ScCurl::download_page($url_short, $storage_container);
+      }
+    } else if (!file_exists($storage_container)) {
+      // call to ScClass for download_page method
+      ScCurl::download_page($url_short, $storage_container);
+    }
+
     // Create $html object
-    $html = file_get_html($url_long);
+    $html = file_get_html($storage_container);
 
     // POPULATE POST_ARRAY
     // create a loop $num_post times to populate $post_array
@@ -163,8 +198,20 @@ function latest_posts ($https, $json='' ){
 
     // create storage container path
     $storage_container = "pages/$site.html";
-    // call to ScClass for download_page method
-    ScCurl::download_page($url_short, $storage_container);
+
+    // Check if created page exists,
+    // create one if not, update it if
+    // page is older than a day.
+    if (file_exists($storage_container)) {
+      $age = (time()-filemtime($storage_container));
+      if ($age > 60*60*12) {
+        // call to ScClass for download_page method
+        ScCurl::download_page($url_short, $storage_container);
+      }
+    } else if (!file_exists($storage_container)) {
+      // call to ScClass for download_page method
+      ScCurl::download_page($url_short, $storage_container);
+    }
 
     // Create $html object
     $html = file_get_html($storage_container);
@@ -194,7 +241,10 @@ function latest_posts ($https, $json='' ){
     $counter++;
   }
   // returns JSON data
-  echo json_encode($posts_array);
+  //echo json_encode($posts_array);
+  // returns populated array
+  return $posts_array;
+  
 } // end function latest_posts()
 
 // CALL function
