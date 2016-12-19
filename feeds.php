@@ -30,7 +30,7 @@ $https = array(
   //   'short' => 'https://www.epicurious.com',
   // ),
   array(
-    'name' => 'Lucky',
+    'name' => 'Lucky Peach',
     'toget' => '4',
     'long' => 'http://luckypeach.com/features/',
     'short' => 'http://www.luckypeach.com',
@@ -140,7 +140,7 @@ function latest_posts ($https, $json='' ){
   //   $counter++;
   // }
   //  LUCKY PEACH
-  if ($https[$counter]['name'] == 'Lucky') {
+  if ($https[$counter]['name'] == 'Lucky Peach') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
     $site = $https[$counter]['name'];
     $toget = $https[$counter]['toget'];
@@ -226,12 +226,10 @@ function latest_posts ($https, $json='' ){
       $heading = $headings[$count]->plaintext;
       $posts_array[$site][$count]['heading'] = $heading;
       // images
-      $img_url_attr = 'data-xlsrc';
-      $pictures = $html->find("li.views-row div div div div.pane-node-field-image div a img");
-      $images = explode ('?', $pictures[$count]->$img_url_attr);
-      // extract first extracted string in created array object
-      $image = $images[0];
-      $posts_array[$site][$count]['image'] = $image;
+      $dataSrc = "data-medsrc";
+      $pictures = $html->find("li.views-row div div div div.pane-node-field-image div a noscript img");
+      $picture = $pictures[$count]->$dataSrc;
+      $posts_array[$site][$count]['image'] = $picture;
       // links
       $links = $html->find("li.views-row div div div div.pane-node-title h3 a");
       $link = "$url_short".$links[$count]->href;
@@ -244,10 +242,26 @@ function latest_posts ($https, $json='' ){
   //echo json_encode($posts_array);
   // returns populated array
   return $posts_array;
-  
+
 } // end function latest_posts()
 
 // CALL function
 latest_posts ($https);
+
+// Display array data
+  foreach ($posts_array as $key => $value) {
+    echo "<h1>$key</h1>";
+    foreach ($value as $key2 => $value2) {
+      $img_url = $value2['image'];
+      $title = $value2['heading'];
+      $href =  $value2['url'];
+      ?>
+      <a href="<?php echo $href; ?>">
+        <img src="<?php echo $img_url; ?>" alt="<?php echo $title; ?>">
+      </a>
+      <h2><?php echo $title; ?></h2>
+      <?php
+    }
+  }
 
 ?>

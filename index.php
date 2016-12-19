@@ -12,9 +12,6 @@
   <div id="main">
     <?php
       include("feeds.php");
-      foreach ($posts_array as $key => $value) {
-        echo $key," &rArr;<br>";
-      }
     ?>
 
     <br><br>
