@@ -10,7 +10,16 @@
   <h1>My Latest Feeds</h1>
 
   <div id="main">
-    This text will be replaced.
+    <?php
+      include("feeds.php");
+      foreach ($posts_array as $key => $value) {
+        echo $key," &rArr;<br>";
+      }
+    ?>
+
+    <br><br>
+    This space is for php generated html and will be visible below php generated content possibly as intended.<br><br>
+    Optionally, the button below uses javascript to retrieve replace this data.<br><br>
   </div>
 
   </br>
