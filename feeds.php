@@ -23,12 +23,12 @@ $https = array(
     'long' => 'https://food52.com',
     'short' => 'https://food52.com',
   ),
-  // array(
-  //   'name' => 'Epicurious',
-  //   'toget' => '4',
-  //   'long' => 'https://www.epicurious.com/recipes-menus',
-  //   'short' => 'https://www.epicurious.com',
-  // ),
+  array(
+    'name' => 'Epicurious',
+    'toget' => '4',
+    'long' => 'https://www.epicurious.com/recipes-menus',
+    'short' => 'https://www.epicurious.com',
+  ),
   array(
     'name' => 'Lucky Peach',
     'toget' => '4',
@@ -104,41 +104,58 @@ function latest_posts ($https, $json='' ){
     $counter++;
   }
   //  EPICURIOUS
-  // if ($https[$counter]['name'] == 'Epicurious') {
-  //   // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
-  //   $site = $https[$counter]['name'];
-  //   $toget = $https[$counter]['toget'];
-  //   $url_short = $https[$counter]['short'];
-  //   $url_long = $https[$counter]['long'];
-  //
-  //   // Create $html object
-  //   $html = file_get_html($url_long);
-  //
-  //   // POPULATE POST_ARRAY
-  //   // create a loop $num_post times to populate $post_array
-  //   $count = 0;
-  //
-  //   while($count < $toget) {
-  //     // headings
-  //     $headings = $html->find("article[itemtype*=CollectionPage] > header > h4");
-  //     $heading = $headings[$count]->plaintext;
-  //     $posts_array[$site][$count]['heading'] = $heading;
-  //     // images
-  //     $img_url_attr = 'data-srcset';
-  //     $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
-  //     // array of two comma delimited attibutes returned from srcset
-  //     $images = explode (', ', $pictures[$count]->$img_url_attr);
-  //     // extract first attibute
-  //     $image =  'https:'.$images[0];
-  //     $posts_array[$site][$count]['image'] = $image;
-  //     // links
-  //     $links = $html->find("article.article-featured-item > a");
-  //     $link = $url_short.$links[$count]->href;
-  //     $posts_array[$site][$count]['url'] = $link;
-  //     $count++;
-  //   }
-  //   $counter++;
-  // }
+  if ($https[$counter]['name'] == 'Epicurious') {
+  // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
+    $site = $https[$counter]['name'];
+    $toget = $https[$counter]['toget'];
+    $url_short = $https[$counter]['short'];
+    $url_long = $https[$counter]['long'];
+
+    // create storage container path
+    $storage_container = "pages/$site.html";
+
+    // Check if created page exists,
+    // create one if not, update it if
+    // page is older than a day.
+    if (file_exists($storage_container)) {
+      $age = (time()-filemtime($storage_container));
+      if ($age > 60*60*12) {
+        // call to ScClass for download_page method
+        ScCurl::download_page($url_short, $storage_container);
+      }
+    } else if (!file_exists($storage_container)) {
+      // call to ScClass for download_page method
+      ScCurl::download_page($url_short, $storage_container);
+    }
+
+    // Create $html object
+    $html = file_get_html($storage_container);
+
+    // POPULATE POST_ARRAY
+    //create a loop $num_post times to populate $post_array
+    $count = 0;
+
+    while($count < $toget) {
+      // headings
+      $headings = $html->find("article.article-featured-item > header h4");
+      $heading = $headings[$count]->plaintext;
+      $posts_array[$site][$count]['heading'] = $heading;
+      // images
+      $img_url_attr = 'data-srcset';
+      $pictures = $html->find("article.article-featured-item > picture > source[media=(min-width: 1024px)]");
+      // array of two comma delimited attibutes returned from srcset
+      $images = explode (', ', $pictures[$count]->$img_url_attr);
+      // extract first attibute
+      $image =  'https:'.$images[1];
+      $posts_array[$site][$count]['image'] = $image;
+      // links
+      $links = $html->find("article.article-featured-item > a");
+      $link = $url_short.$links[$count]->href;
+      $posts_array[$site][$count]['url'] = $link;
+      $count++;
+    }
+    $counter++;
+  }
   //  LUCKY PEACH
   if ($https[$counter]['name'] == 'Lucky Peach') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
