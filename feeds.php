@@ -44,7 +44,7 @@ $https = array(
 );
 
 
-function latest_posts ($https, $json='' ){
+function latest_posts ($https){
 
   // get length of $https
   // all following code uses incremented var to poplate array
@@ -97,7 +97,8 @@ function latest_posts ($https, $json='' ){
       $image =  $containers[$count]->$img_url_attr;
       $posts_array[$site][$count]['image'] = $image;
       // links
-      $url =  $containers[$count]->src;
+      $url_attr = 'data-pin-url';
+      $url =  $containers[$count]->$url_attr;
       $posts_array[$site][$count]['url'] = $url;
       $count ++;
     }
@@ -265,7 +266,7 @@ function latest_posts ($https, $json='' ){
 // CALL function
 latest_posts ($https);
 
-// Display array data
+// Display array data using htmnl
   foreach ($posts_array as $key => $value) {
     echo "<h1>$key</h1>";
     foreach ($value as $key2 => $value2) {
@@ -281,4 +282,8 @@ latest_posts ($https);
     }
   }
 
+  // Display array data using print_r
+  print "<pre>";
+  print_r($posts_array);
+  print "</pre>";
 ?>
