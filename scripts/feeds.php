@@ -10,9 +10,9 @@
 
 // INCLUDE
 // simple_html_dom.php
-include("scripts/simple_html_dom.php");
+include("simple_html_dom.php");
 // curl.php
-include("scripts/curl.php");
+include("curl.php");
 
 // ARRAY OF SITES TO RETRIVE DATA FROM
 // includes a name, number of posts to retrieve, a long url and a short to append links to
@@ -44,13 +44,14 @@ $https = array(
 );
 
 // This function will use curl to pull a designated
-// webpage into a remote server for parsing by simple_html_dom.
-// If a file already exists and is less than 24 hours old,
+// webpage's contents into a remote server for parsing by simple_html_dom.
+// If a file already exists and is less than 12 hours old,
 // no file will be copied to the server.
 // If no file exists, one will be created.
-// If the file is past 24 hours in age, it will be updated.
+// If the file is past 12 hours in age, it will be updated.
+// If the file is caught as empty, it will be recreated.
+// CREATE function
 function latest_posts ($https){
-
   // get length of $https
   // all following code uses incremented var to poplate array
   $num_feeds = count($https);
@@ -71,12 +72,12 @@ function latest_posts ($https){
     // create storage container path
     $storage_container = "pages/$site.html";
 
-    // Check if created page exists,
-    // create one if not, update it if
-    // page is older than a day.
+    // Check if storage page exists on server.
+    // Create new page one does not exist.
+    // Update page if older than a day, or if the page is empty.
     if (file_exists($storage_container)) {
       $age = (time()-filemtime($storage_container));
-      if ($age > 60*60*12) {
+      if ($age > 60*60*12 || 0 == filesize( $storage_container )) {
         // call to ScClass for download_page method
         ScCurl::download_page($url_short, $storage_container);
       }
@@ -85,7 +86,7 @@ function latest_posts ($https){
       ScCurl::download_page($url_short, $storage_container);
     }
 
-    // Create $html object
+    // Create $html object from storage page
     $html = file_get_html($storage_container);
 
     // POPULATE POST_ARRAY
@@ -111,21 +112,16 @@ function latest_posts ($https){
   }
   //  EPICURIOUS
   if ($https[$counter]['name'] == 'Epicurious') {
-  // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
     $site = $https[$counter]['name'];
     $toget = $https[$counter]['toget'];
     $url_short = $https[$counter]['short'];
     $url_long = $https[$counter]['long'];
 
-    // create storage container path
     $storage_container = "pages/$site.html";
 
-    // Check if created page exists,
-    // create one if not, update it if
-    // page is older than a day.
     if (file_exists($storage_container)) {
       $age = (time()-filemtime($storage_container));
-      if ($age > 60*60*12) {
+      if ($age > 60*60*12 || 0 == filesize( $storage_container )) {
         // call to ScClass for download_page method
         ScCurl::download_page($url_short, $storage_container);
       }
@@ -135,11 +131,8 @@ function latest_posts ($https){
       ScCurl::download_page($url_short, $storage_container);
     }
 
-    // Create $html object
     $html = file_get_html($storage_container);
 
-    // POPULATE POST_ARRAY
-    //create a loop $num_post times to populate $post_array
     $count = 0;
 
     while($count < $toget) {
@@ -163,7 +156,6 @@ function latest_posts ($https){
     }
     $counter++;
   }
-
   //  LUCKY PEACH
   if ($https[$counter]['name'] == 'Lucky Peach') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
@@ -180,7 +172,7 @@ function latest_posts ($https){
     // page is older than a day.
     if (file_exists($storage_container)) {
       $age = (time()-filemtime($storage_container));
-      if ($age > 60*60*12) {
+      if ($age > 60*60*12 || 0 == filesize( $storage_container )) {
         // call to ScClass for download_page method
         ScCurl::download_page($url_short, $storage_container);
       }
@@ -229,7 +221,7 @@ function latest_posts ($https){
     // page is older than a day.
     if (file_exists($storage_container)) {
       $age = (time()-filemtime($storage_container));
-      if ($age > 60*60*12) {
+      if ($age > 60*60*12 || 0 == filesize( $storage_container )) {
         // call to ScClass for download_page method
         ScCurl::download_page($url_short, $storage_container);
       }
@@ -264,7 +256,7 @@ function latest_posts ($https){
     $counter++;
   }
 
-  // returns JSON data
+  // OPTIONAL: returns JSON data
   //echo json_encode($posts_array);
   // returns populated array
   return $posts_array;
@@ -275,6 +267,7 @@ function latest_posts ($https){
 latest_posts ($https);
 
 // Function to display array data using html
+// CREATE function
 function display_html($posts_array){
   foreach ($posts_array as $key => $value) {
     echo "<h1>$key</h1>";
@@ -291,7 +284,9 @@ function display_html($posts_array){
     }
   }
 }
+
 // Display formed html
+// CALL function
 //display_html($posts_array);
 
 // Display array data - Debugging only

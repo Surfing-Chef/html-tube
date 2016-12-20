@@ -2,7 +2,7 @@
 class ScCurl
 {
   // create cURL function
-  public static function download_page($url, $out_file = "pages/body.html")
+  public static function download_page($url, $out_file = "../pages/body.html")
   {
     //File to save the contents to
     $fp = fopen($out_file, "w");
@@ -15,7 +15,7 @@ class ScCurl
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($ch, CURLOPT_FILE, $fp);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    
+
     curl_exec($ch);
     fclose($fp);
     $details = curl_getinfo($ch);

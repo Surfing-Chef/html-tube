@@ -11,7 +11,7 @@
 
   <div id="main">
     <?php
-      include("feeds.php");
+      include("scripts/feeds.php");
     ?>
   </div>
 

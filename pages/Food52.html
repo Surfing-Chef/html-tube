@@ -14,7 +14,7 @@
 
     <title>Food52 - Food community, recipes, kitchen &amp; home products, and cooking contests.</title>
     <meta charset="utf-8">
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"e47eb6f779","applicationID":"2379","transactionName":"IQ0MEBFdXloAREkJCw8HTQ0NVldO","queueTime":1,"applicationTime":27,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"e47eb6f779","applicationID":"2379","transactionName":"IQ0MEBFdXloAREkJCw8HTQ0NVldO","queueTime":1,"applicationTime":77,"agent":""}</script>
 <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Uw8AUEVRCwQJ"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
     <meta name="Description" content="Food community, recipes, kitchen &amp; home products, and cooking contests.">
 
@@ -40,7 +40,7 @@
     <link rel="stylesheet" media="all" href="/assets/global-25551424aca6887ff6837c44a3989ac0da8d2b98b3af0cb8e7abbb084b1c4f5b.css" />
       <link rel="stylesheet" media="all" href="/assets/application-dc9c7793158eb5a29babf1c091fe74a375263d8345748d43f08f2c6a6710713f.css" />
   <!--[if lte IE 8]>
-    <link rel="stylesheet" media="screen" href="/assets/application-lte-ie8-100323df7777925366490e53a3690db81a9bb4aaf822140f6c12e276e99489db.css" />
+    <link rel="stylesheet" media="screen" href="/assets/application-lte-ie8-984aadb71850afede6f1c8594fd74cd6550476fc6d3213ab73cbaa20e4ec96c8.css" />
   <![endif]-->
 
       <link rel="stylesheet" media="screen" href="/assets/home_index-5cc181221467423eeb380e3ef9f260990d55d7fbd3ee96257c2644840094e5af.css" />
@@ -57,7 +57,7 @@
     <link rel="alternate" type="application/rss+xml" title="Food52" href="https://food52.com/blog.rss" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="dwilenabDm3tIa/9j4QjF8YAk6+TK3sFHzWzYRB1PNsyIjGqKIb2SQa0HbaNQHdC9sWoMCnyUUX1GKR3+Ng99g==" />
+<meta name="csrf-token" content="69SuFd94lxPFgG7xc46Zlamv1n+bbFDmNSfcWhT9o7n3lg33pF9fQXpSbCImCk+3qmCQwJEzs/IAxRsoUwQSiw==" />
 
     
 
@@ -149,16 +149,8 @@
     </script>
     <!-- /FACEBOOK INIT-->
 
-    <div class="global-page-frame -promo-banner-present" id="global-page-frame">
-      <div data-global-nav-height="64" data-hideable="true" class="global-header-block -promo-banner-present" id="global-header-block">
-          <div class="global-promo-banner -red">
-            It’s go time! Last day for express shipping by the 24th.
-              <a class="global-promo-banner-more-link js-banner-click" data-banner-text="151-it-s-go-time-last-day-for-express" href="https://food52.com/shop/collections/don-t-worry-gifts-that-make-it-by-the-24th">Shop now&nbsp;&raquo;</a>
-              <a class="global-promo-banner-details-link" href="#">details</a>
-              <div class="global-promo-banner-details">
-                Order by 11:59pm ET 12/19/16 for delivery by Christmas using 3-day expedited. U.S. only. Select at check-out. Restrictions apply.
-              </div>
-          </div>
+    <div class="global-page-frame" id="global-page-frame">
+      <div data-global-nav-height="64" data-hideable="true" class="global-header-block" id="global-header-block">
 
         <div class="drawer-curtain"></div>
 
@@ -202,6 +194,10 @@
                           <img class="lazy-nav-img" data-original="https://images.food52.com/dObO42f4sMkADloeXelr0ar73Sc=/122x122/3e83b5b0-a748-40c7-bb83-153cbbf81fd1--2016-0916_gir_round-silicone-lids_family_silo_rocky-luten_352.jpg" alt="" nopin="nopin">
                           <noscript><img src="https://images.food52.com/dObO42f4sMkADloeXelr0ar73Sc=/122x122/3e83b5b0-a748-40c7-bb83-153cbbf81fd1--2016-0916_gir_round-silicone-lids_family_silo_rocky-luten_352.jpg" alt="3e83b5b0 a748 40c7 bb83 153cbbf81fd1  2016 0916 gir round silicone lids family silo rocky luten 352" /></noscript>
                           <h5>Round Silicone Lids</h5>
+</a>                        <a class="shop-sub-nav-new-product track-ga-click-event" data-ga-category="Navigation" data-ga-action="Shop &gt; Product Blocks" href="/shop/products/3081-small-batch-quarterly-hot-sauce-subscription">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/29T4Zn-3HSj_Y3BAu_Ibi-OtgbY=/122x122/90978101-cbe1-4c95-abd1-27669d8a87aa--2016-0513_fuegobox_small-batch-hot-sauce-subscription_silo_rocky-luten_005.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/29T4Zn-3HSj_Y3BAu_Ibi-OtgbY=/122x122/90978101-cbe1-4c95-abd1-27669d8a87aa--2016-0513_fuegobox_small-batch-hot-sauce-subscription_silo_rocky-luten_005.jpg" alt="90978101 cbe1 4c95 abd1 27669d8a87aa  2016 0513 fuegobox small batch hot sauce subscription silo rocky luten 005" /></noscript>
+                          <h5>Small-Batch Quarterly Hot Sauce Subscription</h5>
 </a>                        <a class="shop-sub-nav-new-product track-ga-click-event" data-ga-category="Navigation" data-ga-action="Shop &gt; Product Blocks" href="/shop/products/2943-garden-jar-herb-kit">
                           <img class="lazy-nav-img" data-original="https://images.food52.com/zHRNq-ZM0-G6yHpnW6FxEWMEXnM=/122x122/2538bf73-3ebe-4c04-b790-def68978278b--2016-0318_modern-sprout_garden-jar-herb-kit_family_silo_rocky-luten_2192.jpg" alt="" nopin="nopin">
                           <noscript><img src="https://images.food52.com/zHRNq-ZM0-G6yHpnW6FxEWMEXnM=/122x122/2538bf73-3ebe-4c04-b790-def68978278b--2016-0318_modern-sprout_garden-jar-herb-kit_family_silo_rocky-luten_2192.jpg" alt="2538bf73 3ebe 4c04 b790 def68978278b  2016 0318 modern sprout garden jar herb kit family silo rocky luten 2192" /></noscript>
@@ -210,17 +206,13 @@
                           <img class="lazy-nav-img" data-original="https://images.food52.com/DSp1X-nJw380VxWTOPQSEinf7VM=/122x122/66ccda51-e98a-47f6-928f-5214ab7fab10--2015-0916_zwilling_madura-plus-nonstick-fry-pan_family_rocky-luten_003.jpg" alt="" nopin="nopin">
                           <noscript><img src="https://images.food52.com/DSp1X-nJw380VxWTOPQSEinf7VM=/122x122/66ccda51-e98a-47f6-928f-5214ab7fab10--2015-0916_zwilling_madura-plus-nonstick-fry-pan_family_rocky-luten_003.jpg" alt="66ccda51 e98a 47f6 928f 5214ab7fab10  2015 0916 zwilling madura plus nonstick fry pan family rocky luten 003" /></noscript>
                           <h5>Zwilling Madura Plus Nonstick Fry Pan</h5>
-</a>                        <a class="shop-sub-nav-new-product track-ga-click-event" data-ga-category="Navigation" data-ga-action="Shop &gt; Product Blocks" href="/shop/products/3244-rectangular-silicone-lids">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/_ZFgAj94O2AlO3KEebL4MLxrhbs=/122x122/384818e8-ccea-400e-8fec-7c3eb9abfb1a--2016-0916_gir_rectangular-lids_family_silo_rocky-luten_358.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/_ZFgAj94O2AlO3KEebL4MLxrhbs=/122x122/384818e8-ccea-400e-8fec-7c3eb9abfb1a--2016-0916_gir_rectangular-lids_family_silo_rocky-luten_358.jpg" alt="384818e8 ccea 400e 8fec 7c3eb9abfb1a  2016 0916 gir rectangular lids family silo rocky luten 358" /></noscript>
-                          <h5>Rectangular Silicone Lids</h5>
 </a>                    </div>
 
                     <div class="shop-sub-nav-block secondary double">
                       <a class="shop-subnav-block-collection-block track-ga-click-event" data-ga-category="Navigation" data-ga-action="Shop &gt; Hero Image" href="/shop/collections/our-greatest-hits">
                         <img class="lazy-nav-img" data-original="https://images.food52.com/cogWRdakAIPNBParuVQkrbTmrxI=/540x0/678ba890-4634-415f-b1bc-20303f0b748f--2016-1031_zwilling_madura-plus-nonstick-fry-pan_carousel_bobbi-lin_11448.jpg" alt="" nopin="nopin">
                         <noscript><img src="https://images.food52.com/ITeDm3tx2otUqyu7BsDah0RK2x8=/600x0/678ba890-4634-415f-b1bc-20303f0b748f--2016-1031_zwilling_madura-plus-nonstick-fry-pan_carousel_bobbi-lin_11448.jpg" alt="678ba890 4634 415f b1bc 20303f0b748f  2016 1031 zwilling madura plus nonstick fry pan carousel bobbi lin 11448" /></noscript>
-                        <h5>Our Greatest&nbsp;Hits</h5>
+                        <h5>Our Greatest Hits</h5>
 </a>                    </div>
 
                   </div>
@@ -240,28 +232,28 @@
                     </ul>
 
                       <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 1" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/AZExIxCH6ufBGeYsGdMT4HErUsc=/265x265/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/AZExIxCH6ufBGeYsGdMT4HErUsc=/265x265/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" alt="7ddc9f49 d45c 4e30 b400 26a15c11d97f  2016 1216 latke topping james ransom 0210" /></noscript>
-                          <h3>8 Wacky Ways to Top a Latke (Don't Tell&nbsp;Bubbe)</h3>
+                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 1" href="/blog/14577-how-to-tie-better-bows-3-great-ribbons-to-use">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/T8UyDqIum91nqWRnPq3PgNCflAY=/265x265/8d6fc147-58d9-440d-810d-79ef19e81714--2015-1215_bow-tying-ribbon_mark-weinberg_031.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/T8UyDqIum91nqWRnPq3PgNCflAY=/265x265/8d6fc147-58d9-440d-810d-79ef19e81714--2015-1215_bow-tying-ribbon_mark-weinberg_031.jpg" alt="8d6fc147 58d9 440d 810d 79ef19e81714  2015 1215 bow tying ribbon mark weinberg 031" /></noscript>
+                          <h3>How to Tie Better Bows (&amp; 3 Great Ribbons to Use)</h3>
 </a>                      </div>
                       <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 2" href="/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/GNAdzESF8a2B2g32LsvYopu5eeA=/265x265/88ce5ba5-20f0-4843-bba8-4b015c6b14f0--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_social_bobbi-lin_8035.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/GNAdzESF8a2B2g32LsvYopu5eeA=/265x265/88ce5ba5-20f0-4843-bba8-4b015c6b14f0--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_social_bobbi-lin_8035.jpg" alt="88ce5ba5 20f0 4843 bba8 4b015c6b14f0  2016 0928 park woodshop pie server and blue pie tart social bobbi lin 8035" /></noscript>
-                          <h3>Have You Seen This Video of a Meat Pie in&nbsp;"Space"?</h3>
+                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 2" href="/blog/15135-how-to-get-the-smell-of-frying-out-of-your-kitchen">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/iFyKljsEHgw8xRlyttia3wi-Euc=/265x265/d3df9821-3f50-4435-8b7a-718c7f4d41d9--19014be6-536b-44f6-8b88-09247862e69c-2015-1124_fried-dough-for-hannukah_bobbi-lin_14537.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/iFyKljsEHgw8xRlyttia3wi-Euc=/265x265/d3df9821-3f50-4435-8b7a-718c7f4d41d9--19014be6-536b-44f6-8b88-09247862e69c-2015-1124_fried-dough-for-hannukah_bobbi-lin_14537.jpg" alt="D3df9821 3f50 4435 8b7a 718c7f4d41d9  19014be6 536b 44f6 8b88 09247862e69c 2015 1124 fried dough for hannukah bobbi lin 14537" /></noscript>
+                          <h3>How to Get the Smell of Frying Out of Your Kitchen</h3>
 </a>                      </div>
                       <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 3" href="/blog/18702-meet-the-seasonal-stand-in-for-marinated-artichokes-that-s-also-less-work">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/oR6FVzjdda_A8ia0hdGKP3mc31U=/265x265/af752594-17c8-4d4e-bf13-d29ca8b2ae7d--2016-1101_marinated-kohlrabi_james-ransom-079.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/oR6FVzjdda_A8ia0hdGKP3mc31U=/265x265/af752594-17c8-4d4e-bf13-d29ca8b2ae7d--2016-1101_marinated-kohlrabi_james-ransom-079.jpg" alt="Af752594 17c8 4d4e bf13 d29ca8b2ae7d  2016 1101 marinated kohlrabi james ransom 079" /></noscript>
-                          <h3>Meet the Seasonal Stand-In for Marinated Artichokes (That's Also Less&nbsp;Work)</h3>
+                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 3" href="/blog/18708-cheesy-potato-skins-for-dinner-fine-there-s-kale-too">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/4o1Vw1npej_Cg7TV2bRjA8oo6pc=/265x265/5bfd0d4d-1ea4-4984-b62e-f145865883b8--kale_potato.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/4o1Vw1npej_Cg7TV2bRjA8oo6pc=/265x265/5bfd0d4d-1ea4-4984-b62e-f145865883b8--kale_potato.jpg" alt="5bfd0d4d 1ea4 4984 b62e f145865883b8  kale potato" /></noscript>
+                          <h3>Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale, Too)</h3>
 </a>                      </div>
                       <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 4" href="/blog/4728-a-guide-to-cooking-in-and-caring-for-copper">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/MUkk_cmfVB0EM6giF-dgnRqLmEY=/265x265/2145beda-2ec4-4442-a6ec-daaa7388e9d6--2013-0914_coppermill-kitchen_mixing-bowl-009.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/MUkk_cmfVB0EM6giF-dgnRqLmEY=/265x265/2145beda-2ec4-4442-a6ec-daaa7388e9d6--2013-0914_coppermill-kitchen_mixing-bowl-009.jpg" alt="2145beda 2ec4 4442 a6ec daaa7388e9d6  2013 0914 coppermill kitchen mixing bowl 009" /></noscript>
-                          <h3>A Guide to Cooking in and Caring for&nbsp;Copper</h3>
+                        <a class="subnav-block-frame track-ga-click-event" title="Read article" data-ga-category="Navigation" data-ga-action="Features &gt; Article Block 4" href="/blog/18690-sculptures-prints-photos-paintings-that-prove-art-can-be-an-excellent-gift">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/lro-42iAaveCf7sPsW8vDmiy_1c=/265x265/9414de6d-df63-4e0e-9d2d-ddd6a849bfe0--Thoughtful-Giving_Web_Day-24_3_1-.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/lro-42iAaveCf7sPsW8vDmiy_1c=/265x265/9414de6d-df63-4e0e-9d2d-ddd6a849bfe0--Thoughtful-Giving_Web_Day-24_3_1-.jpg" alt="9414de6d df63 4e0e 9d2d ddd6a849bfe0  thoughtful giving web day 24 3 1 " /></noscript>
+                          <h3>Sculptures, Prints, Photos &amp; Paintings That Prove Art Can Be an Excellent Gift</h3>
 </a>                      </div>
 
                   </div>
@@ -282,28 +274,28 @@
                     </ul>
 
                       <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 1" href="/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins">
+                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 1" href="/recipes/66073-dorie-greenspan-s-do-almost-anything-vanilla-cookie-dough">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/q1365G8gD6rmSrgMkn0mroA388I=/265x265/8db9eea7-58c8-4ef1-a9a0-4067a7cf065d--2016-1129_secret-cookies_james-ransom-411.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/q1365G8gD6rmSrgMkn0mroA388I=/265x265/8db9eea7-58c8-4ef1-a9a0-4067a7cf065d--2016-1129_secret-cookies_james-ransom-411.jpg" alt="8db9eea7 58c8 4ef1 a9a0 4067a7cf065d  2016 1129 secret cookies james ransom 411" /></noscript>
+                          <h3>Dorie Greenspan&#39;s Do-Almost-Anything Vanilla Cookie Dough </h3>
+</a>                      </div>
+                      <div class="standard-subnav-block secondary">
+                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 2" href="/recipes/66052-chocolate-truffle-cookies">
+                          <img class="lazy-nav-img" data-original="https://images.food52.com/nRAV0vCwPsoV6YWb88hgR2Q6esg=/265x265/44e74cfe-a19f-436e-8248-a6782cb519ab--Chocolate_Truffle_Cookies-2.jpg" alt="" nopin="nopin">
+                          <noscript><img src="https://images.food52.com/nRAV0vCwPsoV6YWb88hgR2Q6esg=/265x265/44e74cfe-a19f-436e-8248-a6782cb519ab--Chocolate_Truffle_Cookies-2.jpg" alt="44e74cfe a19f 436e 8248 a6782cb519ab  chocolate truffle cookies 2" /></noscript>
+                          <h3>Chocolate Truffle Cookies</h3>
+</a>                      </div>
+                      <div class="standard-subnav-block secondary">
+                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 3" href="/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins">
                           <img class="lazy-nav-img" data-original="https://images.food52.com/rRBfnxHXT2HDZ__LyBCxKFcJ3jQ=/265x265/7d6134ec-a332-42db-8fd9-21b7d93fd7d1--2016-0913_genius-marion-cunningham-ginger-muffins_alpha-smoot_585.jpg" alt="" nopin="nopin">
                           <noscript><img src="https://images.food52.com/rRBfnxHXT2HDZ__LyBCxKFcJ3jQ=/265x265/7d6134ec-a332-42db-8fd9-21b7d93fd7d1--2016-0913_genius-marion-cunningham-ginger-muffins_alpha-smoot_585.jpg" alt="7d6134ec a332 42db 8fd9 21b7d93fd7d1  2016 0913 genius marion cunningham ginger muffins alpha smoot 585" /></noscript>
-                          <h3>Marion Cunningham’s Bridge Creek Fresh Ginger&nbsp;Muffins</h3>
+                          <h3>Marion Cunningham’s Bridge Creek Fresh Ginger Muffins</h3>
 </a>                      </div>
                       <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 2" href="/recipes/66191-sesame-noodles-with-swiss-chard-and-chicken">
+                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 4" href="/recipes/66191-sesame-noodles-with-swiss-chard-and-chicken">
                           <img class="lazy-nav-img" data-original="https://images.food52.com/ysPEPeWCUPVZqL2NBlXD3Akj2b0=/265x265/f7878acf-0c77-48f6-90bb-7b8d0ba89730--sesamenoodleswithchicken2.jpg" alt="" nopin="nopin">
                           <noscript><img src="https://images.food52.com/ysPEPeWCUPVZqL2NBlXD3Akj2b0=/265x265/f7878acf-0c77-48f6-90bb-7b8d0ba89730--sesamenoodleswithchicken2.jpg" alt="F7878acf 0c77 48f6 90bb 7b8d0ba89730  sesamenoodleswithchicken2" /></noscript>
-                          <h3>Sesame Noodles with Swiss Chard and&nbsp;Chicken</h3>
-</a>                      </div>
-                      <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 3" href="/recipes/66072-oatmeal-cookies-with-white-chocolate-and-golden-raisins">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/x8kQsE3js6tGsl1AhmbsoJClNKU=/265x265/ae6e61e2-6ffc-49b8-973c-1bc9cfc9aabe--2016-1104_oatmeal-raisin-cookies-with-white-chocolate-chips_james-ransom-225_1-.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/x8kQsE3js6tGsl1AhmbsoJClNKU=/265x265/ae6e61e2-6ffc-49b8-973c-1bc9cfc9aabe--2016-1104_oatmeal-raisin-cookies-with-white-chocolate-chips_james-ransom-225_1-.jpg" alt="Ae6e61e2 6ffc 49b8 973c 1bc9cfc9aabe  2016 1104 oatmeal raisin cookies with white chocolate chips james ransom 225 1 " /></noscript>
-                          <h3>Oatmeal Cookies with White Chocolate and Golden&nbsp;Raisins</h3>
-</a>                      </div>
-                      <div class="standard-subnav-block secondary">
-                        <a class="subnav-block-frame track-ga-click-event" title="View recipe" data-ga-category="Navigation" data-ga-action="Recipes &gt; Recipe Block 4" href="/recipes/66235-lindsey-shere-s-almond-tart">
-                          <img class="lazy-nav-img" data-original="https://images.food52.com/0w6CnYQSPYUk3DD-ZZShXQ-UKGM=/265x265/2b16fd10-c354-4fc7-b177-49190f6af609--2016-1122_chez-panisse-almond-tart_james-ransom-480.jpg" alt="" nopin="nopin">
-                          <noscript><img src="https://images.food52.com/0w6CnYQSPYUk3DD-ZZShXQ-UKGM=/265x265/2b16fd10-c354-4fc7-b177-49190f6af609--2016-1122_chez-panisse-almond-tart_james-ransom-480.jpg" alt="2b16fd10 c354 4fc7 b177 49190f6af609  2016 1122 chez panisse almond tart james ransom 480" /></noscript>
-                          <h3>Lindsey Shere’s Almond&nbsp;Tart</h3>
+                          <h3>Sesame Noodles with Swiss Chard and Chicken</h3>
 </a>                      </div>
 
                   </div>
@@ -317,7 +309,6 @@
                     <ul class="global-nav-primary-list standard-subnav-block">
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Contests &gt; The Current Contest" href="/contests/434-your-best-festive-crowd-feeding-breakfast">The Current Contest</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Contests &gt; The Latest Winner" href="/recipes/65445-shaoxing-roast-chicken">The Latest Winner</a></li>
-                      <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Contests &gt; Contest Winners" href="/contests/archives">Contest Winners</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Contests &gt; Wildcard Winners" href="/recipes/wildcards">Wildcard Winners</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Contests &gt; Latest Contest News" href="/topics/38">Latest Contest News</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Contests &gt; About the Contests" href="/contests/about">About the Contests</a></li>
@@ -327,7 +318,7 @@
                       <a class="subnav-block-frame contest track-ga-click-event" title="View contest" data-ga-category="Navigation" data-ga-action="Contests &gt; Hero Image" href="/contests/434-your-best-festive-crowd-feeding-breakfast">
                         <img class="lazy-nav-img" data-original="https://images.food52.com/1JWd30QgApYUI4CntuQ2khs_Z4Q=/500x358/b6fce139-06a2-4465-a673-b33e26e577bd--2013-1203_clara_strata-015.jpg" alt="" nopin="nopin">
                         <noscript><img src="https://images.food52.com/1JWd30QgApYUI4CntuQ2khs_Z4Q=/500x358/b6fce139-06a2-4465-a673-b33e26e577bd--2013-1203_clara_strata-015.jpg" alt="B6fce139 06a2 4465 a673 b33e26e577bd  2013 1203 clara strata 015" /></noscript>
-                        <h3>Your Best Festive, Crowd-Feeding&nbsp;Breakfast</h3>
+                        <h3>Your Best Festive, Crowd-Feeding Breakfast</h3>
 </a>                    </div>
 
                   </div>
@@ -342,6 +333,7 @@
 
                     <ul class="global-nav-primary-list standard-subnav-block">
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Holiday Gift Guide" href="/shop/p/our-guide-to-gifts-and-gathering">Guide to Gifts and Gathering</a></li>
+                      <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Last Minute Gifts" href="/shop/p/gifts-that-keep-on-giving">Last-Minute (But Lovely!) Gifts</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Global Desserts" href="/p/the-illustrated-biographies-of-16-1-2-global-desserts">The Biographies of 16&nbsp;&frac12; Global Desserts</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Holiday Menu Genie" href="/holiday/menu-genie">Holiday Menu Genie</a></li>
                       <li><a class="track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Get More Cookware Knives" href="/shop/collections/get-more-cookware-knives-for-less">All Our Sale Cookware &amp; Knives</a></li>
@@ -364,10 +356,10 @@
 </a>                    </div>
 
                     <div class="shop-sub-nav-block secondary double">
-                      <a class="shop-subnav-block-collection-block track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Hero Image (holiday gift guide collection)" href="/shop/p/our-guide-to-gifts-and-gathering">
-                        <img class="lazy-nav-img" data-original="https://images.food52.com/H5MLUy-rlIJdmCsqr4wce_WzClY=/800x0/920af877-a438-4dfa-8d2c-977c54e583fe--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_carousel_bobbi-lin_8097.jpg" alt="" nopin="nopin">
-                        <noscript><img src="https://images.food52.com/H5MLUy-rlIJdmCsqr4wce_WzClY=/800x0/920af877-a438-4dfa-8d2c-977c54e583fe--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_carousel_bobbi-lin_8097.jpg" alt="920af877 a438 4dfa 8d2c 977c54e583fe  2016 0928 park woodshop pie server and blue pie tart carousel bobbi lin 8097" /></noscript>
-                        <h5>Guide to Gifts and&nbsp;Gathering</h5>
+                      <a class="shop-subnav-block-collection-block track-ga-click-event" data-ga-category="Navigation" data-ga-action="Holiday &gt; Gifts That Make It By The 24th" href="/shop/collections/don-t-worry-gifts-that-make-it-by-the-24th">
+                        <img class="lazy-nav-img" data-original="https://images.food52.com/unsafe/fit-in/800x0/1059d200-0224-45b8-bb60-690a53bbacc3--slack-imgs.jpg" alt="" nopin="nopin">
+                        <noscript><img src="https://images.food52.com/unsafe/fit-in/800x0/1059d200-0224-45b8-bb60-690a53bbacc3--slack-imgs.jpg" alt="1059d200 0224 45b8 bb60 690a53bbacc3  slack imgs" /></noscript>
+                        <h5>Gifts That Make It By the&nbsp;24th</h5>
 </a>                    </div>
 
                   </div>
@@ -673,46 +665,46 @@
 
 <div class="home-frame">
   <div class="home-grid">
-      <a class="promo-bundle-block -hero track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 1" data-ga-label="locale: home" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">
+      <a class="promo-bundle-block -hero track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 1" data-ga-label="locale: home" href="/blog/14577-how-to-tie-better-bows-3-great-ribbons-to-use">
     <div class="promo-bundle-frame">
-        <img alt="Applesauce is good and all but we&#39;ve got some *other* ideas  " data-pin-media="https://images.food52.com/MCHHh4BgvOkBIl1x_foKSZxw-uA=/1000x1000/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" data-pin-url="https://food52.com/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe" data-pin-description="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) " src="https://images.food52.com/HF08rLnhfqqGQSvRr9rZUtl-dmg=/1040x520/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" />
+        <img alt="How to make the most of grosgrain, satin, and wired silk" data-pin-media="https://images.food52.com/kNIlrRGqaRxDfPvKn67QH6Jelrw=/1000x1000/8d6fc147-58d9-440d-810d-79ef19e81714--2015-1215_bow-tying-ribbon_mark-weinberg_031.jpg" data-pin-url="https://food52.com/blog/14577-how-to-tie-better-bows-3-great-ribbons-to-use" data-pin-description="How to Tie Better Bows (&amp; 3 Great Ribbons to Use)" src="https://images.food52.com/zWu2ld0x1QAXtlAqwF9-vlxunSQ=/1040x520/8d6fc147-58d9-440d-810d-79ef19e81714--2015-1215_bow-tying-ribbon_mark-weinberg_031.jpg" />
 
         <div class="promo-bundle-copy-frame">
-          <h5>8 Wacky Ways to Top a Latke (Don't Tell&nbsp;Bubbe)</h5>
-          <p class="subhead">Applesauce is good and all but we&#39;ve got some *other* ideas  </p>
-          <p class="shorthead">Latke Toppings, Wacky &amp; Weird</p>
+          <h5>How to Tie Better Bows (& 3 Great Ribbons to&nbsp;Use)</h5>
+          <p class="subhead">How to make the most of grosgrain, satin, and wired silk</p>
+          <p class="shorthead">A Lesson in Perkier Bows</p>
         </div>
     </div>
-</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 2" data-ga-label="locale: home" href="/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space">
+</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 2" data-ga-label="locale: home" href="/blog/15135-how-to-get-the-smell-of-frying-out-of-your-kitchen">
     <div class="promo-bundle-frame">
-        <img alt="Notice the air quotes." data-pin-media="https://images.food52.com/nErzNrKRCQlbZLPPIP6idSoREAk=/1000x1000/c3cb450a-d398-4e2e-a0b2-fb38382e51ae--2016-1108_how-to-make-pot-pie-without-a-recipe_james-ransom-197.jpg" data-pin-url="https://food52.com/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space" data-pin-description="Have You Seen This Video of a Meat Pie in &quot;Space&quot;?" src="https://images.food52.com/PuT672d32KiR4R0DaJQTR2x1Xgo=/460x230/c3cb450a-d398-4e2e-a0b2-fb38382e51ae--2016-1108_how-to-make-pot-pie-without-a-recipe_james-ransom-197.jpg" />
+        <img alt="Hanukkah lasts for eight nights—but the smell of oil doesn&#39;t have to." data-pin-media="https://images.food52.com/Iim-9kmr7V96A1dCcEMjeeHL69k=/1000x1000/d3df9821-3f50-4435-8b7a-718c7f4d41d9--19014be6-536b-44f6-8b88-09247862e69c-2015-1124_fried-dough-for-hannukah_bobbi-lin_14537.jpg" data-pin-url="https://food52.com/blog/15135-how-to-get-the-smell-of-frying-out-of-your-kitchen" data-pin-description="How to Get the Smell of Frying Out of Your Kitchen" src="https://images.food52.com/OltXcz7ZQhAAJzZ-yID3oaXK0Jo=/460x230/d3df9821-3f50-4435-8b7a-718c7f4d41d9--19014be6-536b-44f6-8b88-09247862e69c-2015-1124_fried-dough-for-hannukah_bobbi-lin_14537.jpg" />
 
         <div class="promo-bundle-copy-frame">
-          <p>See This Video of a Meat Pie in &quot;Space&quot;?</p>
+          <p>Frying Smell, Be Gone!</p>
         </div>
     </div>
-</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 3" data-ga-label="locale: home" href="https://food52.com/shop/collections/don-t-worry-gifts-that-make-it-by-the-24th">
+</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 3" data-ga-label="locale: home" href="https://food52.com/shop/products/1909-white-italian-truffle-1-ounce">
     <div class="promo-bundle-frame">
-        <img alt="" data-pin-media="https://images.food52.com/rjAtxh-tNp-029zU10sNelR71gw=/1000x1000/f5776817-b849-4321-a366-8cd457a85c76--fred-ardnt_precision-cut-wood-christmas-ornaments_provisions_mark_weinberg_06-11-14_0745_CAROUSEL_1-.jpg" data-pin-url="https://food52.comhttps://food52.com/shop/collections/don-t-worry-gifts-that-make-it-by-the-24th" data-pin-description="" src="https://images.food52.com/h9tOcGkhpzK6b-Op8kRjvhocd8Y=/460x230/f5776817-b849-4321-a366-8cd457a85c76--fred-ardnt_precision-cut-wood-christmas-ornaments_provisions_mark_weinberg_06-11-14_0745_CAROUSEL_1-.jpg" />
+        <img alt="" data-pin-media="https://images.food52.com/31soEW7xY3eaVn3z6gqPUn_vOVo=/1000x1000/4f5cf007-eaf0-4330-9761-69e771bd3942--2014-1114_mikuni-wild-harvest_white-italian-truffle_silo_james-ransom_003.jpg" data-pin-url="https://food52.comhttps://food52.com/shop/products/1909-white-italian-truffle-1-ounce" data-pin-description="" src="https://images.food52.com/_OORTg5ULd9VqkaEmGo9snRBC3s=/460x230/4f5cf007-eaf0-4330-9761-69e771bd3942--2014-1114_mikuni-wild-harvest_white-italian-truffle_silo_james-ransom_003.jpg" />
 
         <div class="promo-bundle-copy-frame">
-          <p>Gifts That Zip Express by the 24th</p>
+          <p>Truffles On Sale (&amp; On Point)</p>
         </div>
     </div>
-</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 4" data-ga-label="locale: home" href="/blog/18702-meet-the-seasonal-stand-in-for-marinated-artichokes-that-s-also-less-work">
+</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 4" data-ga-label="locale: home" href="/blog/18708-cheesy-potato-skins-for-dinner-fine-there-s-kale-too">
     <div class="promo-bundle-frame">
-        <img alt="A surprise from a humble, rather obscure vegetable" data-pin-media="https://images.food52.com/g-QgLtX59M_uFTZKByj83tvX4dg=/1000x1000/af752594-17c8-4d4e-bf13-d29ca8b2ae7d--2016-1101_marinated-kohlrabi_james-ransom-079.jpg" data-pin-url="https://food52.com/blog/18702-meet-the-seasonal-stand-in-for-marinated-artichokes-that-s-also-less-work" data-pin-description="Meet the Seasonal Stand-In for Marinated Artichokes (That&#39;s Also Less Work)" src="https://images.food52.com/JS0f6I2W2CgcZTGoLWX8r_SHjm4=/460x230/af752594-17c8-4d4e-bf13-d29ca8b2ae7d--2016-1101_marinated-kohlrabi_james-ransom-079.jpg" />
+        <img alt="It&#39;s kind of like a single-portion kale gratin" data-pin-media="https://images.food52.com/xtxFrp5YuFFxH1Nz9tX2UI88RiA=/1000x1000/5bfd0d4d-1ea4-4984-b62e-f145865883b8--kale_potato.jpg" data-pin-url="https://food52.com/blog/18708-cheesy-potato-skins-for-dinner-fine-there-s-kale-too" data-pin-description="Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale, Too)" src="https://images.food52.com/5wF7tw1zR3yCN6ys1N5z-0GfMCo=/460x230/5bfd0d4d-1ea4-4984-b62e-f145865883b8--kale_potato.jpg" />
 
         <div class="promo-bundle-copy-frame">
-          <p>The New Marinated Artichokes</p>
+          <p>Cheesy Potato Skins for Dinner </p>
         </div>
     </div>
-</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 5" data-ga-label="locale: home" href="https://food52.com/shop/collections/subscriptions-that-last-all-year-round">
+</a>  <a class="promo-bundle-block track-ga-click-event" data-ga-category="promo bundle" data-ga-action="click slot 5" data-ga-label="locale: home" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">
     <div class="promo-bundle-frame">
-        <img alt="" data-pin-media="https://images.food52.com/hqXq9hTVCL2tOCWDBVacn-UvswA=/1000x1000/4322117d-7b70-4a5f-bb7c-f0d3c6eba029--2016-0914_eattiamo_cuvee-di-8-boticelle-balsamic-vinegar_carousel_alpha-smoot_159.jpg" data-pin-url="https://food52.comhttps://food52.com/shop/collections/subscriptions-that-last-all-year-round" data-pin-description="" src="https://images.food52.com/GGCvIypo-O-U__Xk3PxSXZE4KLQ=/460x230/4322117d-7b70-4a5f-bb7c-f0d3c6eba029--2016-0914_eattiamo_cuvee-di-8-boticelle-balsamic-vinegar_carousel_alpha-smoot_159.jpg" />
+        <img alt="Applesauce is good and all but we&#39;ve got some *other* ideas  " data-pin-media="https://images.food52.com/MCHHh4BgvOkBIl1x_foKSZxw-uA=/1000x1000/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" data-pin-url="https://food52.com/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe" data-pin-description="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) " src="https://images.food52.com/rOt2woXNirBjLcEa5OuxnERyJSo=/460x230/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" />
 
         <div class="promo-bundle-copy-frame">
-          <p>Subscription Gifts That Give All Year</p>
+          <p>Latke Toppings, Wacky &amp; Weird</p>
         </div>
     </div>
 </a><div class="clearfix"></div>
@@ -771,43 +763,46 @@
     <div id="grid" data-bind="css: {'loading': home.loading }">
       
     <div class="home-tile cook revealed">
-      <a class="image" href="/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins">
-        <img alt="Marion Cunningham’s Bridge Creek Fresh Ginger Muffins" data-pin-media="https://images.food52.com/XXoFvh6c4jHZZ06t0ISHDi3t3ec=/1000x1000/7d6134ec-a332-42db-8fd9-21b7d93fd7d1--2016-0913_genius-marion-cunningham-ginger-muffins_alpha-smoot_585.jpg" data-pin-url="https://food52.com/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins" data-pin-description="Marion Cunningham’s Bridge Creek Fresh Ginger Muffins recipe on Food52" src="https://images.food52.com/rRBfnxHXT2HDZ__LyBCxKFcJ3jQ=/265x265/7d6134ec-a332-42db-8fd9-21b7d93fd7d1--2016-0913_genius-marion-cunningham-ginger-muffins_alpha-smoot_585.jpg" />
+      <a class="image" href="/recipes/66073-dorie-greenspan-s-do-almost-anything-vanilla-cookie-dough">
+        <img alt="Dorie Greenspan&#39;s Do-Almost-Anything Vanilla Cookie Dough " data-pin-media="https://images.food52.com/5oQVO3e-VK0xneivAaBmCWhAqU8=/1000x1000/8db9eea7-58c8-4ef1-a9a0-4067a7cf065d--2016-1129_secret-cookies_james-ransom-411.jpg" data-pin-url="https://food52.com/recipes/66073-dorie-greenspan-s-do-almost-anything-vanilla-cookie-dough" data-pin-description="Dorie Greenspan&#39;s Do-Almost-Anything Vanilla Cookie Dough  recipe on Food52" src="https://images.food52.com/q1365G8gD6rmSrgMkn0mroA388I=/265x265/8db9eea7-58c8-4ef1-a9a0-4067a7cf065d--2016-1129_secret-cookies_james-ransom-411.jpg" />
         <div class="overlay">
           <p><em class="category">Recipe</em>
-            <br>Marion Cunningham’s Bridge Creek Fresh Ginger Muffins
-            <br><em>By <span>Genius Recipes</span></em>
+            <br>Dorie Greenspan&#39;s Do-Almost-Anything Vanilla Cookie Dough 
+            <br><em>By <span>Dorie Greenspan</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="171 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;171
+            <abbr title="29 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;29
             </abbr>
-            <abbr title="21 Comments">
-              <span class="f52-icon">&#x1f4ac;</span>&nbsp;21
+            <abbr title="3 Comments">
+              <span class="f52-icon">&#x1f4ac;</span>&nbsp;3
             </abbr>
         </div>
-</a>      <a title="Marion Cunningham’s Bridge Creek Fresh Ginger Muffins" class="text" href="/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins">Marion Cunningham’s Bridge Creek Fresh Ginger Muffins...</a>
+</a>      <a title="Dorie Greenspan&#39;s Do-Almost-Anything Vanilla Cookie Dough " class="text" href="/recipes/66073-dorie-greenspan-s-do-almost-anything-vanilla-cookie-dough">Dorie Greenspan&#39;s Do-Almost-Anything Vanilla Cookie...</a>
     </div>
 
 
 
     <div class="home-tile read revealed">
-      <a class="image" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">
-        <img alt="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) " data-pin-media="https://images.food52.com/MCHHh4BgvOkBIl1x_foKSZxw-uA=/1000x1000/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" data-pin-url="https://food52.com/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe" data-pin-description="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe)  on Food52" src="https://images.food52.com/AZExIxCH6ufBGeYsGdMT4HErUsc=/265x265/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" />
+      <a class="image" href="/blog/14577-how-to-tie-better-bows-3-great-ribbons-to-use">
+        <img alt="How to Tie Better Bows (&amp; 3 Great Ribbons to Use)" data-pin-media="https://images.food52.com/kNIlrRGqaRxDfPvKn67QH6Jelrw=/1000x1000/8d6fc147-58d9-440d-810d-79ef19e81714--2015-1215_bow-tying-ribbon_mark-weinberg_031.jpg" data-pin-url="https://food52.com/blog/14577-how-to-tie-better-bows-3-great-ribbons-to-use" data-pin-description="How to Tie Better Bows (&amp; 3 Great Ribbons to Use) on Food52" src="https://images.food52.com/T8UyDqIum91nqWRnPq3PgNCflAY=/265x265/8d6fc147-58d9-440d-810d-79ef19e81714--2015-1215_bow-tying-ribbon_mark-weinberg_031.jpg" />
         <div class="overlay">
           <p>
-            8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) 
-            <br><em>By <span>Sarah Jampel</span></em>
+            How to Tie Better Bows (&amp; 3 Great Ribbons to Use)
+            <br><em>By <span>Amanda Sims</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="2 Comments">
-              <span class="f52-icon">&#x1F4AC;</span>&nbsp;2
+            <abbr title="37 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;37
+            </abbr>
+            <abbr title="12 Comments">
+              <span class="f52-icon">&#x1F4AC;</span>&nbsp;12
             </abbr>
         </div>
-</a>        <a class="tile-topic-label" href="/topics/holidays">Holidays</a>
-      <a title="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) " class="text" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) </a>
+</a>        <a class="tile-topic-label" href="/topics/gifts">Gifts</a>
+      <a title="How to Tie Better Bows (&amp; 3 Great Ribbons to Use)" class="text" href="/blog/14577-how-to-tie-better-bows-3-great-ribbons-to-use">How to Tie Better Bows (&amp; 3 Great Ribbons to Use)</a>
     </div>
 
 
@@ -832,69 +827,69 @@
           <div class="meta">
           Sale!
           Exclusive!
-            <abbr title="34 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;34
+            <abbr title="35 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;35
             </abbr>
         </div>
 </a>      <a title="White Italian Truffle (1 Ounce)" class="text" href="/shop/products/1909-white-italian-truffle-1-ounce">White Italian Truffle (1 Ounce)</a>
     </div>
 
     <div class="home-tile read revealed">
-      <a class="image" href="/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space">
-        <img alt="Have You Seen This Video of a Meat Pie in &quot;Space&quot;?" data-pin-media="https://images.food52.com/VUwewnKLIWNgGtiuBWF5b29lv88=/1000x1000/88ce5ba5-20f0-4843-bba8-4b015c6b14f0--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_social_bobbi-lin_8035.jpg" data-pin-url="https://food52.com/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space" data-pin-description="Have You Seen This Video of a Meat Pie in &quot;Space&quot;? on Food52" src="https://images.food52.com/GNAdzESF8a2B2g32LsvYopu5eeA=/265x265/88ce5ba5-20f0-4843-bba8-4b015c6b14f0--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_social_bobbi-lin_8035.jpg" />
+      <a class="image" href="/blog/15135-how-to-get-the-smell-of-frying-out-of-your-kitchen">
+        <img alt="How to Get the Smell of Frying Out of Your Kitchen" data-pin-media="https://images.food52.com/Iim-9kmr7V96A1dCcEMjeeHL69k=/1000x1000/d3df9821-3f50-4435-8b7a-718c7f4d41d9--19014be6-536b-44f6-8b88-09247862e69c-2015-1124_fried-dough-for-hannukah_bobbi-lin_14537.jpg" data-pin-url="https://food52.com/blog/15135-how-to-get-the-smell-of-frying-out-of-your-kitchen" data-pin-description="How to Get the Smell of Frying Out of Your Kitchen on Food52" src="https://images.food52.com/iFyKljsEHgw8xRlyttia3wi-Euc=/265x265/d3df9821-3f50-4435-8b7a-718c7f4d41d9--19014be6-536b-44f6-8b88-09247862e69c-2015-1124_fried-dough-for-hannukah_bobbi-lin_14537.jpg" />
         <div class="overlay">
           <p>
-            Have You Seen This Video of a Meat Pie in &quot;Space&quot;?
-            <br><em>By <span>Mayukh Sen</span></em>
+            How to Get the Smell of Frying Out of Your Kitchen
+            <br><em>By <span>Sarah Jampel</span></em>
           </p>
         </div>
         <div class="meta">
+            <abbr title="20 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;20
+            </abbr>
+            <abbr title="32 Comments">
+              <span class="f52-icon">&#x1F4AC;</span>&nbsp;32
+            </abbr>
         </div>
-</a>        <a class="tile-topic-label" href="/topics/pie">Pie</a>
-      <a title="Have You Seen This Video of a Meat Pie in &quot;Space&quot;?" class="text" href="/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space">Have You Seen This Video of a Meat Pie in &quot;Space&quot;?</a>
+</a>        <a class="tile-topic-label" href="/topics/advice">Advice</a>
+      <a title="How to Get the Smell of Frying Out of Your Kitchen" class="text" href="/blog/15135-how-to-get-the-smell-of-frying-out-of-your-kitchen">How to Get the Smell of Frying Out of Your Kitchen</a>
     </div>
 
     <div class="home-tile cook revealed">
-      <a class="image" href="/recipes/66191-sesame-noodles-with-swiss-chard-and-chicken">
-        <img alt="Sesame Noodles with Swiss Chard and Chicken" data-pin-media="https://images.food52.com/9PxWKNZ9y0dOZ4_lQWJBFWK4Bcg=/1000x1000/f7878acf-0c77-48f6-90bb-7b8d0ba89730--sesamenoodleswithchicken2.jpg" data-pin-url="https://food52.com/recipes/66191-sesame-noodles-with-swiss-chard-and-chicken" data-pin-description="Sesame Noodles with Swiss Chard and Chicken recipe on Food52" src="https://images.food52.com/ysPEPeWCUPVZqL2NBlXD3Akj2b0=/265x265/f7878acf-0c77-48f6-90bb-7b8d0ba89730--sesamenoodleswithchicken2.jpg" />
+      <a class="image" href="/recipes/66052-chocolate-truffle-cookies">
+        <img alt="Chocolate Truffle Cookies" data-pin-media="https://images.food52.com/ZRRFTDph4KWGqTGlWewct9SLq6U=/1000x1000/44e74cfe-a19f-436e-8248-a6782cb519ab--Chocolate_Truffle_Cookies-2.jpg" data-pin-url="https://food52.com/recipes/66052-chocolate-truffle-cookies" data-pin-description="Chocolate Truffle Cookies recipe on Food52" src="https://images.food52.com/nRAV0vCwPsoV6YWb88hgR2Q6esg=/265x265/44e74cfe-a19f-436e-8248-a6782cb519ab--Chocolate_Truffle_Cookies-2.jpg" />
         <div class="overlay">
           <p><em class="category">Recipe</em>
-            <br>Sesame Noodles with Swiss Chard and Chicken
-            <br><em>By <span>Alexandra Stafford</span></em>
+            <br>Chocolate Truffle Cookies
+            <br><em>By <span>Posie Harwood</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="43 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;43
+            <abbr title="38 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;38
             </abbr>
-            <abbr title="10 Comments">
-              <span class="f52-icon">&#x1f4ac;</span>&nbsp;10
+            <abbr title="8 Comments">
+              <span class="f52-icon">&#x1f4ac;</span>&nbsp;8
             </abbr>
         </div>
-</a>      <a title="Sesame Noodles with Swiss Chard and Chicken" class="text" href="/recipes/66191-sesame-noodles-with-swiss-chard-and-chicken">Sesame Noodles with Swiss Chard and Chicken</a>
+</a>      <a title="Chocolate Truffle Cookies" class="text" href="/recipes/66052-chocolate-truffle-cookies">Chocolate Truffle Cookies</a>
     </div>
 
 
 
     <div class="home-tile read revealed">
-      <a class="image" href="/blog/18702-meet-the-seasonal-stand-in-for-marinated-artichokes-that-s-also-less-work">
-        <img alt="Meet the Seasonal Stand-In for Marinated Artichokes (That&#39;s Also Less Work)" data-pin-media="https://images.food52.com/g-QgLtX59M_uFTZKByj83tvX4dg=/1000x1000/af752594-17c8-4d4e-bf13-d29ca8b2ae7d--2016-1101_marinated-kohlrabi_james-ransom-079.jpg" data-pin-url="https://food52.com/blog/18702-meet-the-seasonal-stand-in-for-marinated-artichokes-that-s-also-less-work" data-pin-description="Meet the Seasonal Stand-In for Marinated Artichokes (That&#39;s Also Less Work) on Food52" src="https://images.food52.com/oR6FVzjdda_A8ia0hdGKP3mc31U=/265x265/af752594-17c8-4d4e-bf13-d29ca8b2ae7d--2016-1101_marinated-kohlrabi_james-ransom-079.jpg" />
+      <a class="image" href="/blog/18708-cheesy-potato-skins-for-dinner-fine-there-s-kale-too">
+        <img alt="Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale, Too)" data-pin-media="https://images.food52.com/xtxFrp5YuFFxH1Nz9tX2UI88RiA=/1000x1000/5bfd0d4d-1ea4-4984-b62e-f145865883b8--kale_potato.jpg" data-pin-url="https://food52.com/blog/18708-cheesy-potato-skins-for-dinner-fine-there-s-kale-too" data-pin-description="Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale, Too) on Food52" src="https://images.food52.com/4o1Vw1npej_Cg7TV2bRjA8oo6pc=/265x265/5bfd0d4d-1ea4-4984-b62e-f145865883b8--kale_potato.jpg" />
         <div class="overlay">
           <p>
-            Meet the Seasonal Stand-In for Marinated Artichokes (That&#39;s Also Less Work)
-            <br><em>By <span>Josh Cohen</span></em>
+            Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale, Too)
+            <br><em>By <span>Riddley Gemperlein-Schirm </span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="2 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;2
-            </abbr>
-            <abbr title="1 Comment">
-              <span class="f52-icon">&#x1F4AC;</span>&nbsp;1
-            </abbr>
         </div>
-</a>        <a class="tile-topic-label" href="/topics/appetizers">Appetizers</a>
-      <a title="Meet the Seasonal Stand-In for Marinated Artichokes (That&#39;s Also Less Work)" class="text" href="/blog/18702-meet-the-seasonal-stand-in-for-marinated-artichokes-that-s-also-less-work">Meet the Seasonal Stand-In for Marinated Artichokes...</a>
+</a>        <a class="tile-topic-label" href="/topics/dinner-faster">Dinner, Faster</a>
+      <a title="Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale, Too)" class="text" href="/blog/18708-cheesy-potato-skins-for-dinner-fine-there-s-kale-too">Cheesy Potato Skins for Dinner (Fine, There&#39;s Kale...</a>
     </div>
 
 
@@ -919,72 +914,72 @@
           <div class="meta">
           
           
-            <abbr title="5 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;5
+            <abbr title="6 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;6
             </abbr>
         </div>
 </a>      <a title="Hammered Copper Boston Shaker" class="text" href="/shop/products/3510-hammered-copper-boston-shaker">Hammered Copper Boston Shaker</a>
     </div>
 
     <div class="home-tile read revealed">
-      <a class="image" href="/blog/4728-a-guide-to-cooking-in-and-caring-for-copper">
-        <img alt="A Guide to Cooking in and Caring for Copper" data-pin-media="https://images.food52.com/awOzwD12F_EUj-vw4DVVPDrqD30=/1000x1000/2145beda-2ec4-4442-a6ec-daaa7388e9d6--2013-0914_coppermill-kitchen_mixing-bowl-009.jpg" data-pin-url="https://food52.com/blog/4728-a-guide-to-cooking-in-and-caring-for-copper" data-pin-description="A Guide to Cooking in and Caring for Copper on Food52" src="https://images.food52.com/MUkk_cmfVB0EM6giF-dgnRqLmEY=/265x265/2145beda-2ec4-4442-a6ec-daaa7388e9d6--2013-0914_coppermill-kitchen_mixing-bowl-009.jpg" />
+      <a class="image" href="/blog/18690-sculptures-prints-photos-paintings-that-prove-art-can-be-an-excellent-gift">
+        <img alt="Sculptures, Prints, Photos &amp; Paintings That Prove Art Can Be an Excellent Gift" data-pin-media="https://images.food52.com/8HuFrEkwI4hYNMC2Ll8rDXfI4u4=/1000x1000/9414de6d-df63-4e0e-9d2d-ddd6a849bfe0--Thoughtful-Giving_Web_Day-24_3_1-.jpg" data-pin-url="https://food52.com/blog/18690-sculptures-prints-photos-paintings-that-prove-art-can-be-an-excellent-gift" data-pin-description="Sculptures, Prints, Photos &amp; Paintings That Prove Art Can Be an Excellent Gift on Food52" src="https://images.food52.com/lro-42iAaveCf7sPsW8vDmiy_1c=/265x265/9414de6d-df63-4e0e-9d2d-ddd6a849bfe0--Thoughtful-Giving_Web_Day-24_3_1-.jpg" />
         <div class="overlay">
           <p>
-            A Guide to Cooking in and Caring for Copper
-            <br><em>By <span>Kenzi Wilbur</span></em>
+            Sculptures, Prints, Photos &amp; Paintings That Prove Art Can Be an Excellent Gift
+            <br><em>By <span>Amanda Sims</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="59 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;59
-            </abbr>
-            <abbr title="47 Comments">
-              <span class="f52-icon">&#x1F4AC;</span>&nbsp;47
+            <abbr title="2 Comments">
+              <span class="f52-icon">&#x1F4AC;</span>&nbsp;2
             </abbr>
         </div>
-</a>        <a class="tile-topic-label" href="/topics/tips-techniques">Tips &amp; Techniques</a>
-      <a title="A Guide to Cooking in and Caring for Copper" class="text" href="/blog/4728-a-guide-to-cooking-in-and-caring-for-copper">A Guide to Cooking in and Caring for Copper</a>
+</a>        <a class="tile-topic-label" href="/topics/gifts">Gifts</a>
+      <a title="Sculptures, Prints, Photos &amp; Paintings That Prove Art Can Be an Excellent Gift" class="text" href="/blog/18690-sculptures-prints-photos-paintings-that-prove-art-can-be-an-excellent-gift">Sculptures, Prints, Photos &amp; Paintings That Prove...</a>
     </div>
 
     <div class="home-tile cook revealed">
-      <a class="image" href="/recipes/66072-oatmeal-cookies-with-white-chocolate-and-golden-raisins">
-        <img alt="Oatmeal Cookies with White Chocolate and Golden Raisins" data-pin-media="https://images.food52.com/1iq8BsMTAXi4kdRr9Z1GqOnUp44=/1000x1000/ae6e61e2-6ffc-49b8-973c-1bc9cfc9aabe--2016-1104_oatmeal-raisin-cookies-with-white-chocolate-chips_james-ransom-225_1-.jpg" data-pin-url="https://food52.com/recipes/66072-oatmeal-cookies-with-white-chocolate-and-golden-raisins" data-pin-description="Oatmeal Cookies with White Chocolate and Golden Raisins recipe on Food52" src="https://images.food52.com/x8kQsE3js6tGsl1AhmbsoJClNKU=/265x265/ae6e61e2-6ffc-49b8-973c-1bc9cfc9aabe--2016-1104_oatmeal-raisin-cookies-with-white-chocolate-chips_james-ransom-225_1-.jpg" />
+      <a class="image" href="/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins">
+        <img alt="Marion Cunningham’s Bridge Creek Fresh Ginger Muffins" data-pin-media="https://images.food52.com/XXoFvh6c4jHZZ06t0ISHDi3t3ec=/1000x1000/7d6134ec-a332-42db-8fd9-21b7d93fd7d1--2016-0913_genius-marion-cunningham-ginger-muffins_alpha-smoot_585.jpg" data-pin-url="https://food52.com/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins" data-pin-description="Marion Cunningham’s Bridge Creek Fresh Ginger Muffins recipe on Food52" src="https://images.food52.com/rRBfnxHXT2HDZ__LyBCxKFcJ3jQ=/265x265/7d6134ec-a332-42db-8fd9-21b7d93fd7d1--2016-0913_genius-marion-cunningham-ginger-muffins_alpha-smoot_585.jpg" />
         <div class="overlay">
           <p><em class="category">Recipe</em>
-            <br>Oatmeal Cookies with White Chocolate and Golden Raisins
-            <br><em>By <span>sarah kieffer | the vanilla bean blog</span></em>
+            <br>Marion Cunningham’s Bridge Creek Fresh Ginger Muffins
+            <br><em>By <span>Genius Recipes</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="15 Likes">
-              <span class="f52-icon">&#x2665;</span>&nbsp;15
+            <abbr title="172 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;172
+            </abbr>
+            <abbr title="21 Comments">
+              <span class="f52-icon">&#x1f4ac;</span>&nbsp;21
             </abbr>
         </div>
-</a>      <a title="Oatmeal Cookies with White Chocolate and Golden Raisins" class="text" href="/recipes/66072-oatmeal-cookies-with-white-chocolate-and-golden-raisins">Oatmeal Cookies with White Chocolate and Golden...</a>
+</a>      <a title="Marion Cunningham’s Bridge Creek Fresh Ginger Muffins" class="text" href="/recipes/63200-marion-cunningham-s-bridge-creek-fresh-ginger-muffins">Marion Cunningham’s Bridge Creek Fresh Ginger Muffins...</a>
     </div>
 
 
 
     <div class="home-tile read revealed">
-      <a class="image" href="/blog/18703-28-holiday-breakfasts-syrup-covered-scrambled-strata-fied">
-        <img alt="28 Holiday Breakfasts: Syrup-Covered, Scrambled, Strata-fied " data-pin-media="https://images.food52.com/OGZ1mtkI6s7YUM01OkIOjoTmmeI=/1000x1000/66bdee28-a0ea-44c6-8075-5ce08213f293--2015-1130_the-kitchns-lofty-buttermilk-pancakes_bobbi-lin_15231.jpg" data-pin-url="https://food52.com/blog/18703-28-holiday-breakfasts-syrup-covered-scrambled-strata-fied" data-pin-description="28 Holiday Breakfasts: Syrup-Covered, Scrambled, Strata-fied  on Food52" src="https://images.food52.com/9eDZiwhIRGOYcDk1dm-foeVbAoY=/265x265/66bdee28-a0ea-44c6-8075-5ce08213f293--2015-1130_the-kitchns-lofty-buttermilk-pancakes_bobbi-lin_15231.jpg" />
+      <a class="image" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">
+        <img alt="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) " data-pin-media="https://images.food52.com/MCHHh4BgvOkBIl1x_foKSZxw-uA=/1000x1000/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" data-pin-url="https://food52.com/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe" data-pin-description="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe)  on Food52" src="https://images.food52.com/AZExIxCH6ufBGeYsGdMT4HErUsc=/265x265/7ddc9f49-d45c-4e30-b400-26a15c11d97f--2016-1216_latke-topping_james-ransom_0210.jpg" />
         <div class="overlay">
           <p>
-            28 Holiday Breakfasts: Syrup-Covered, Scrambled, Strata-fied 
-            <br><em>By <span>Riddley Gemperlein-Schirm </span></em>
+            8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) 
+            <br><em>By <span>Sarah Jampel</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="1 Like">
-              <span class="f52-icon">&#x2665;</span>&nbsp;1
+            <abbr title="2 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;2
             </abbr>
-            <abbr title="1 Comment">
-              <span class="f52-icon">&#x1F4AC;</span>&nbsp;1
+            <abbr title="2 Comments">
+              <span class="f52-icon">&#x1F4AC;</span>&nbsp;2
             </abbr>
         </div>
 </a>        <a class="tile-topic-label" href="/topics/holidays">Holidays</a>
-      <a title="28 Holiday Breakfasts: Syrup-Covered, Scrambled, Strata-fied " class="text" href="/blog/18703-28-holiday-breakfasts-syrup-covered-scrambled-strata-fied">28 Holiday Breakfasts: Syrup-Covered, Scrambled...</a>
+      <a title="8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) " class="text" href="/blog/18698-8-wacky-ways-to-top-a-latke-don-t-tell-bubbe">8 Wacky Ways to Top a Latke (Don&#39;t Tell Bubbe) </a>
     </div>
 
 
@@ -1009,29 +1004,29 @@
           <div class="meta">
           
           
-            <abbr title="1 Like">
-              <span class="f52-icon">&#x2665;</span>&nbsp;1
+            <abbr title="2 Likes">
+              <span class="f52-icon">&#x2665;</span>&nbsp;2
             </abbr>
         </div>
 </a>      <a title="Hammered Copper Double-Sided Jigger" class="text" href="/shop/products/3509-hammered-copper-double-sided-jigger">Hammered Copper Double-Sided Jigger</a>
     </div>
 
     <div class="home-tile read revealed">
-      <a class="image" href="/blog/18685-finally-a-home-bar-manual-from-the-inventor-of-the-craft-cocktail-movement">
-        <img alt="Finally, a Home Bar Manual from the Inventor of the Craft Cocktail Movement" data-pin-media="https://images.food52.com/SMAr83YC31wiNJvftE_IhnVmmog=/1000x1000/5fa7885c-17d9-428d-8518-b6ca085363e2--9780714872810-photo-2.jpg" data-pin-url="https://food52.com/blog/18685-finally-a-home-bar-manual-from-the-inventor-of-the-craft-cocktail-movement" data-pin-description="Finally, a Home Bar Manual from the Inventor of the Craft Cocktail Movement on Food52" src="https://images.food52.com/OFtGYzg9C-hRqXdxbyvxeo9TTjY=/265x265/5fa7885c-17d9-428d-8518-b6ca085363e2--9780714872810-photo-2.jpg" />
+      <a class="image" href="/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space">
+        <img alt="Have You Seen This Video of a Meat Pie in &quot;Space&quot;?" data-pin-media="https://images.food52.com/VUwewnKLIWNgGtiuBWF5b29lv88=/1000x1000/88ce5ba5-20f0-4843-bba8-4b015c6b14f0--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_social_bobbi-lin_8035.jpg" data-pin-url="https://food52.com/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space" data-pin-description="Have You Seen This Video of a Meat Pie in &quot;Space&quot;? on Food52" src="https://images.food52.com/GNAdzESF8a2B2g32LsvYopu5eeA=/265x265/88ce5ba5-20f0-4843-bba8-4b015c6b14f0--2016-0928_park-woodshop_pie-server-and-blue-pie-tart_social_bobbi-lin_8035.jpg" />
         <div class="overlay">
           <p>
-            Finally, a Home Bar Manual from the Inventor of the Craft Cocktail Movement
-            <br><em>By <span>Megan</span></em>
+            Have You Seen This Video of a Meat Pie in &quot;Space&quot;?
+            <br><em>By <span>Mayukh Sen</span></em>
           </p>
         </div>
         <div class="meta">
-            <abbr title="1 Like">
-              <span class="f52-icon">&#x2665;</span>&nbsp;1
+            <abbr title="1 Comment">
+              <span class="f52-icon">&#x1F4AC;</span>&nbsp;1
             </abbr>
         </div>
-</a>        <a class="tile-topic-label" href="/topics/holiday-entertaining">Holiday Entertaining</a>
-      <a title="Finally, a Home Bar Manual from the Inventor of the Craft Cocktail Movement" class="text" href="/blog/18685-finally-a-home-bar-manual-from-the-inventor-of-the-craft-cocktail-movement">Finally, a Home Bar Manual from the Inventor of...</a>
+</a>        <a class="tile-topic-label" href="/topics/pie">Pie</a>
+      <a title="Have You Seen This Video of a Meat Pie in &quot;Space&quot;?" class="text" href="/blog/18704-have-you-seen-this-video-of-a-meat-pie-in-space">Have You Seen This Video of a Meat Pie in &quot;Space&quot;?</a>
     </div>
 
 
@@ -1113,24 +1108,24 @@
 </a>      </h3>
       <ul class="hotline-questions">
           <li>
-            <em><a href="/hotline/34396-i-am-making-braised-short-ribs-for-christmas-recipe-is-from-naomi-pomeroy-can-i-do-the-initial-brai">I am making braised short ribs for Christmas. Recipe is from Naomi Pomeroy. Can I do the initial braising the night before, then reheat the next day?</a> &ndash;&nbsp;<a class="username" href="/users/174059-pat-rocker">Pat Rocker</a></em>
+            <em><a href="/hotline/34402-i-bake-a-pecan-pie-last-night-delicious-but-pecans-seem-too-crunchy-and-hard-to-cut-pie-from-pan">I bake a pecan pie last night, delicious, but pecans seem too crunchy and hard to cut pie from pan.  Did prebake crust and cooked for about 50 minutes</a> &ndash;&nbsp;<a class="username" href="/users/1130876-tj">TJ</a></em>
             <div>
-              <span class="f52-icon">&#x1f4ac;</span> 2 answers
-              <a class="btn primary" href="/hotline/34396-i-am-making-braised-short-ribs-for-christmas-recipe-is-from-naomi-pomeroy-can-i-do-the-initial-brai">Answer&nbsp;&raquo;</a>
+              <span class="f52-icon">&#x1f4ac;</span> 0 answers
+              <a class="btn primary" href="/hotline/34402-i-bake-a-pecan-pie-last-night-delicious-but-pecans-seem-too-crunchy-and-hard-to-cut-pie-from-pan">Answer&nbsp;&raquo;</a>
             </div>
           </li>
           <li>
-            <em><a href="/hotline/34395-i-roasted-4-pekin-ducks-for-a-christmas-party-i-kept-all-the-duck-fat-and-it-sep-into-two-parts-a">I roasted 4 Pekin Ducks for a Christmas party. I kept all the duck fat and it sep. into two parts: a clear liquid and a fatty solid. what do i keep?</a> &ndash;&nbsp;<a class="username" href="/users/1130345-julie-blauvelt">Julie Blauvelt</a></em>
+            <em><a href="/hotline/34400-how-long-does-a-buche-de-noel-yule-log-last">How long does a Buche de Noel (Yule Log) last?</a> &ndash;&nbsp;<a class="username" href="/users/81590-walkie74">walkie74</a></em>
             <div>
-              <span class="f52-icon">&#x1f4ac;</span> 1 answer
-              <a class="btn primary" href="/hotline/34395-i-roasted-4-pekin-ducks-for-a-christmas-party-i-kept-all-the-duck-fat-and-it-sep-into-two-parts-a">Answer&nbsp;&raquo;</a>
+              <span class="f52-icon">&#x1f4ac;</span> 3 answers
+              <a class="btn primary" href="/hotline/34400-how-long-does-a-buche-de-noel-yule-log-last">Answer&nbsp;&raquo;</a>
             </div>
           </li>
           <li>
-            <em><a href="/hotline/34394-a-question-about-a-recipe-variegated-spiced-latkes">Can these be pan seared or baked?  And can any steps be done in advance?</a> &ndash;&nbsp;<a class="username" href="/users/821475-jared-karmily">Jared Karmily</a></em>
+            <em><a href="/hotline/34399-adjusting-the-roasting-time-for-a-christmas-ham"> Adjusting the roasting time for a Christmas ham?</a> &ndash;&nbsp;<a class="username" href="/users/19448-zerosummer">zerosummer</a></em>
             <div>
-              <span class="f52-icon">&#x1f4ac;</span> 2 answers
-              <a class="btn primary" href="/hotline/34394-a-question-about-a-recipe-variegated-spiced-latkes">Answer&nbsp;&raquo;</a>
+              <span class="f52-icon">&#x1f4ac;</span> 0 answers
+              <a class="btn primary" href="/hotline/34399-adjusting-the-roasting-time-for-a-christmas-ham">Answer&nbsp;&raquo;</a>
             </div>
           </li>
       </ul>
@@ -1178,7 +1173,7 @@
               <li><a href="/contact">Contact</a></li>
               <li><a href="/faq">FAQs</a></li>
               <li>
-                <a target="_blank" rel="nofollow" href="/cdn-cgi/l/email-protection#f29396849780869b819b9c95b2949d9d96c7c0dc919d9f">Advertising</a>
+                <a target="_blank" rel="nofollow" href="/cdn-cgi/l/email-protection#ed8c899b889f99849e84838aad8b828289d8dfc38e8280">Advertising</a>
               </li>
             </ul>
           </div>
