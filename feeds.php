@@ -124,7 +124,8 @@ function latest_posts ($https){
         // call to ScClass for download_page method
         ScCurl::download_page($url_short, $storage_container);
       }
-    } else if (!file_exists($storage_container)) {
+    }
+    else if (!file_exists($storage_container)) {
       // call to ScClass for download_page method
       ScCurl::download_page($url_short, $storage_container);
     }
@@ -157,6 +158,7 @@ function latest_posts ($https){
     }
     $counter++;
   }
+
   //  LUCKY PEACH
   if ($https[$counter]['name'] == 'Lucky Peach') {
     // RETRIEVE PERTINENT VARIABLES FROM ARRAY OF SITE DATA (array: $http)
@@ -256,6 +258,7 @@ function latest_posts ($https){
     }
     $counter++;
   }
+
   // returns JSON data
   //echo json_encode($posts_array);
   // returns populated array
@@ -266,7 +269,8 @@ function latest_posts ($https){
 // CALL function
 latest_posts ($https);
 
-// Display array data using htmnl
+// Function to display array data using html
+function display_html($posts_array){
   foreach ($posts_array as $key => $value) {
     echo "<h1>$key</h1>";
     foreach ($value as $key2 => $value2) {
@@ -281,9 +285,12 @@ latest_posts ($https);
       <?php
     }
   }
+}
+// Display formed html
+//display_html($posts_array);
 
-  // Display array data using print_r
-  print "<pre>";
-  print_r($posts_array);
-  print "</pre>";
+// Display array data - Debugging only
+print "<pre>";
+print_r($posts_array);
+print "</pre>";
 ?>
