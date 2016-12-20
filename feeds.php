@@ -43,7 +43,12 @@ $https = array(
   )
 );
 
-
+// This function will use curl to pull a designated
+// webpage into a remote server for parsing by simple_html_dom.
+// If a file already exists and is less than 24 hours old,
+// no file will be copied to the server.
+// If no file exists, one will be created.
+// If the file is past 24 hours in age, it will be updated.
 function latest_posts ($https){
 
   // get length of $https
